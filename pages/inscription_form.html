@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Electro Business Guinée</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> electrobusinessguinee@gmail.com</span>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo-ebg.png" alt="ElectroBusinessGuinee Logo" class="logo-img">
+            </div>
+            <button class="menu-toggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="formation_cyber.html">Cyber Sécurité</a></li>
+                    <li><a href="voyage.html">Voyage</a></li>
+                    <li><a href="apropos.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="inscription-btn"><a href="inscription_form.html">S'inscrire</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h2>Inscription aux Formations</h2>
+            <p>Rejoignez nos programmes de formation et développez vos compétences</p>
+        </div>
+    </section>
+
+    <!-- Inscription Form Section -->
+    <section class="inscription-section">
+        <div class="container">
+            <div class="inscription-form-container">
+                <form class="inscription-form" action="#" method="POST">
+                    <div class="form-section">
+                        <h3>Informations Personnelles</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nom">Nom complet *</label>
+                                <input type="text" id="nom" name="nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="prenom">Prénom *</label>
+                                <input type="text" id="prenom" name="prenom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="date_naissance">Date de naissance *</label>
+                                <input type="date" id="date_naissance" name="date_naissance" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="genre">Genre *</label>
+                                <select id="genre" name="genre" required>
+                                    <option value="">Sélectionnez</option>
+                                    <option value="homme">Homme</option>
+                                    <option value="femme">Femme</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Coordonnées</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone">Téléphone *</label>
+                                <input type="tel" id="telephone" name="telephone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adresse">Adresse *</label>
+                                <input type="text" id="adresse" name="adresse" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ville">Ville *</label>
+                                <input type="text" id="ville" name="ville" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Formation</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="formation">Formation souhaitée *</label>
+                                <select id="formation" name="formation" required>
+                                    <option value="">Sélectionnez une formation</option>
+                                    <option value="informatique">Informatique Générale</option>
+                                    <option value="cyber">Cyber Sécurité</option>
+                                    <option value="anglais">Anglais</option>
+                                    <option value="maintenance">Maintenance</option>
+                                    <option value="infographie">Infographie</option>
+                                    <option value="ia">Intelligence Artificielle</option>
+                                    <option value="drone">Pilotage Drone</option>
+                                    <option value="chatgpt">ChatGPT</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="niveau">Niveau d'études *</label>
+                                <select id="niveau" name="niveau" required>
+                                    <option value="">Sélectionnez</option>
+                                    <option value="primaire">Primaire</option>
+                                    <option value="college">Collège</option>
+                                    <option value="lycee">Lycée</option>
+                                    <option value="universite">Université</option>
+                                    <option value="master">Master</option>
+                                    <option value="doctorat">Doctorat</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="experience">Expérience en informatique</label>
+                                <select id="experience" name="experience">
+                                    <option value="debutant">Débutant</option>
+                                    <option value="intermediaire">Intermédiaire</option>
+                                    <option value="avance">Avancé</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="objectif">Objectif de la formation *</label>
+                                <select id="objectif" name="objectif" required>
+                                    <option value="">Sélectionnez</option>
+                                    <option value="professionnel">Développement professionnel</option>
+                                    <option value="reconversion">Reconversion</option>
+                                    <option value="complementaire">Formation complémentaire</option>
+                                    <option value="personnel">Développement personnel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Informations Complémentaires</h3>
+                        <div class="form-group">
+                            <label for="commentaire">Comment avez-vous connu EBG ?</label>
+                            <select id="commentaire" name="commentaire">
+                                <option value="">Sélectionnez</option>
+                                <option value="internet">Internet</option>
+                                <option value="reseau">Réseaux sociaux</option>
+                                <option value="ami">Ami/Connaissance</option>
+                                <option value="publicite">Publicité</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message (facultatif)</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Vos questions ou commentaires..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="conditions" name="conditions" required>
+                            <label for="conditions">J'accepte les conditions générales d'inscription *</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Je souhaite recevoir la newsletter</label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-paper-plane"></i>
+                            Envoyer l'inscription
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>À Propos</h3>
+                    <p>ElectroBusinessGuinee est votre partenaire de confiance pour tous vos besoins en formation et services informatiques en Guinée.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Boulbinet, en face de Manden Couture, Conakry</p>
+                    <p><i class="fas fa-phone"></i> +224 612 33 44 11 / +224 625 31 58 87</p>
+                    <p><i class="fas fa-envelope"></i> electrobusinessguinee@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#maintenance">Maintenance Informatique</a></li>
+                        <li><a href="services.html#vente">Vente d'Équipements</a></li>
+                        <li><a href="services.html#voyage">Assistance Voyage</a></li>
+                        <li><a href="services.html#formation">Formation en informatique</a></li>
+                        <li><a href="services.html#english">Formation en Anglais</a></li>
+                        <li><a href="services.html#internet">Access Internet</a></li>
+                        <li><a href="services.html#print">Impression Numérique</a></li>
+                        <li><a href="services.html#web">Création site web</a></li>
+                        <li><a href="services.html#graphic">Conception Graphique</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Formations</h3>
+                    <ul>
+                        <li><a href="formations.html#word">Microsoft Word</a></li>
+                        <li><a href="formations.html#excel">Microsoft Excel</a></li>
+                        <li><a href="formations.html#windows">Windows</a></li>
+                        <li><a href="formations.html#general">Informatique Générale</a></li>
+                        <li><a href="formations.html#maintenance">Maintenance</a></li>
+                        <li><a href="formations.html#infographie">Infographie</a></li>
+                        <li><a href="formations.html#ia">Intelligence Artificielle</a></li>
+                        <li><a href="formations.html#drone">Pilotage Drone</a></li>
+                        <li><a href="formations.html#chatgpt">ChatGPT</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="formations.html">Formations</a></li>
+                        <li><a href="voyage.html">Voyage</a></li>
+                        <li><a href="apropos.html">À Propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ElectroBusinessGuinee. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
