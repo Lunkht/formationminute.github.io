@@ -109,7 +109,7 @@ h6 {
 
 /* Top Navigation */
 .top-nav {
-    background:linear-gradient(90deg, rgb(111, 1, 50),rgb(152, 2, 2));
+    background: linear-gradient(90deg, rgb(111, 1, 50), rgb(152, 2, 2));
     color: var(--color-white);
     padding: 1px;
 }
@@ -120,17 +120,38 @@ h6 {
     align-items: center;
 }
 
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 .contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
     margin-right: 20px;
 }
 
 .social-links a {
     color: var(--color-white);
-    margin-left: 15px;
-    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
 }
+
+.social-links a:hover {
+    color: var(--color-light-violet);
+    transform: translateY(-2px);
+}
+
 /* Style pour le bouton d'inscription dans la navigation */
-/* Top Navigation Buttons */
 .top-nav .signup-layout {
     list-style: none;
     padding: 0;
@@ -159,7 +180,6 @@ h6 {
     color: #333;
     background-color: var(--color-white);
 }
-
 
 .top-nav .connexion-btn a:hover {
     background-color: #333;
