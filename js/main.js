@@ -97,106 +97,312 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Données des services
     const servicesData = {
-        'maintenance': {
-            title: 'Maintenance Informatique',
-            image: 'images/reparateur.png',
-            description: 'Service professionnel de maintenance et réparation pour tous vos équipements informatiques.',
+        maintenance: {
+            title: "Maintenance Informatique",
+            image: "images/maintenance.png",
+            description: "Service complet de maintenance et réparation pour vos équipements informatiques.",
             features: [
-                'Diagnostic complet',
-                'Réparation hardware et software',
-                'Nettoyage et optimisation',
-                'Installation de logiciels',
-                'Récupération de données'
+                "Diagnostic et dépannage",
+                "Installation de logiciels",
+                "Nettoyage et optimisation",
+                "Récupération de données",
+                "Mise à jour système"
             ],
             benefits: [
-                'Service rapide et efficace',
-                'Techniciens qualifiés',
-                'Garantie sur les réparations',
-                'Prix compétitifs',
-                'Service à domicile disponible'
+                "Intervention rapide",
+                "Techniciens certifiés",
+                "Garantie sur les réparations",
+                "Prix compétitifs",
+                "Service après-vente"
             ]
         },
-        'vente': {
-            title: 'Vente d\'Équipements',
-            image: 'images/vente.jpg',
-            description: 'Large gamme d\'équipements informatiques de qualité pour tous vos besoins.',
+        vente: {
+            title: "Vente d'Équipements",
+            image: "images/sales.png",
+            description: "Large gamme d'équipements informatiques de qualité pour tous vos besoins.",
             features: [
-                'Ordinateurs neufs et reconditionnés',
-                'Périphériques et accessoires',
-                'Composants informatiques',
-                'Équipements réseau',
-                'Solutions de stockage'
+                "Ordinateurs et accessoires",
+                "Smartphones et tablettes",
+                "Périphériques (imprimantes, scanners)",
+                "Composants informatiques",
+                "Matériel de réseau"
             ],
             benefits: [
-                'Produits garantis',
-                'Prix compétitifs',
-                'Conseils personnalisés',
-                'Installation incluse',
-                'Service après-vente'
+                "Produits garantis",
+                "Prix compétitifs",
+                "Conseils personnalisés",
+                "Installation incluse",
+                "Service après-vente"
             ]
         },
-        'voyage': {
-            title: 'Assistance Voyage',
-            image: 'images/voyage.jpg',
-            description: 'Service complet d\'assistance pour vos voyages et démarches administratives.',
+        Internet: {
+            title: "Access Internet",
+            image: "images/internet.png",
+            description: "Accès Internet haut débit dans nos locaux pour une navigation sécurisée et discrète.",
             features: [
-                'Obtention de visa',
-                'Réservation de billets',
-                'Assistance administrative',
-                'Conseils voyage',
-                'Support documentaire'
+                "Connexion haut débit",
+                "Espace de travail confortable",
+                "Sécurité renforcée",
+                "Assistance technique",
+                "Impressions disponibles"
             ],
             benefits: [
-                'Service personnalisé',
-                'Expertise administrative',
-                'Tarifs négociés',
-                'Suivi complet',
-                'Support multilingue'
+                "Navigation rapide",
+                "Environnement sécurisé",
+                "Confort optimal",
+                "Prix abordable",
+                "Horaires flexibles"
+            ]
+        },
+        adm: {
+            title: "Démarchage Administrative",
+            image: "images/impression.png",
+            description: "Service complet d'assistance administrative pour faciliter vos démarches.",
+            features: [
+                "Aide aux démarches administratives",
+                "Rédaction de documents",
+                "Suivi des dossiers",
+                "Conseils personnalisés",
+                "Service de messagerie"
+            ],
+            benefits: [
+                "Gain de temps",
+                "Expertise administrative",
+                "Suivi personnalisé",
+                "Confidentialité garantie",
+                "Prix transparents"
+            ]
+        },
+        cv: {
+            title: "Traitement de CV",
+            image: "images/graphic.png",
+            description: "Service professionnel de création et d'optimisation de CV pour maximiser vos chances.",
+            features: [
+                "Création de CV",
+                "Optimisation de contenu",
+                "Mise en page professionnelle",
+                "Adaptation au poste",
+                "Conseils personnalisés"
+            ],
+            benefits: [
+                "Design professionnel",
+                "Contenu optimisé",
+                "Adaptation ATS",
+                "Conseils experts",
+                "Révisions illimitées"
+            ]
+        },
+        print: {
+            title: "Électroménager",
+            image: "images/graphic.png",
+            description: "Service complet de réparation et maintenance pour vos appareils électroménagers.",
+            features: [
+                "Réparation d'appareils",
+                "Maintenance préventive",
+                "Installation",
+                "Dépannage urgent",
+                "Pièces de rechange"
+            ],
+            benefits: [
+                "Techniciens qualifiés",
+                "Intervention rapide",
+                "Garantie sur les réparations",
+                "Prix compétitifs",
+                "Service après-vente"
+            ]
+        },
+        formation: {
+            title: "Formations",
+            image: "images/graphic.png",
+            description: "Formations professionnelles en informatique adaptées à tous les niveaux.",
+            features: [
+                "Formations personnalisées",
+                "Formateurs experts",
+                "Support pratique",
+                "Certification",
+                "Suivi post-formation"
+            ],
+            benefits: [
+                "Apprentissage pratique",
+                "Petits groupes",
+                "Horaires flexibles",
+                "Support continu",
+                "Certification reconnue"
             ]
         }
     };
 
     // Données des formations
     const formationsData = {
-        'word': {
-            title: 'Microsoft Word',
-            image: 'images/word.jpg',
-            description: 'Formation complète pour maîtriser Microsoft Word et devenir un expert en traitement de texte.',
+        word: {
+            title: "Microsoft Word",
+            image: "images/formation word.png",
+            description: "Formation complète au traitement de texte professionnel avec Microsoft Word.",
             program: [
-                'Interface et fonctionnalités de base',
-                'Mise en forme avancée',
-                'Tableaux et graphiques',
-                'Styles et modèles',
-                'Fusion de documents',
-                'Collaboration en temps réel'
+                "Interface et fonctionnalités de base",
+                "Mise en forme avancée",
+                "Tableaux et graphiques",
+                "Styles et modèles",
+                "Fusion et publipostage",
+                "Collaboration et révision"
             ],
-            duration: '1 mois',
+            duration: "1 mois",
             prerequisites: [
-                'Connaissances de base en informatique',
-                'Accès à Microsoft Word',
-                'Ordinateur personnel recommandé'
+                "Connaissances de base en informatique",
+                "Accès à Microsoft Word",
+                "Motivation et assiduité"
             ]
         },
-        'excel': {
-            title: 'Microsoft Excel',
-            image: 'images/excel.jpg',
-            description: 'Formation professionnelle pour maîtriser Excel et l\'analyse de données.',
+        excel: {
+            title: "Microsoft Excel",
+            image: "images/formation_excel.png",
+            description: "Maîtrisez les tableurs avec notre formation Excel complète.",
             program: [
-                'Fonctions et formules',
-                'Tableaux croisés dynamiques',
-                'Graphiques et visualisation',
-                'Macros et automatisation',
-                'Analyse de données',
-                'Tableaux de bord'
+                "Fonctions de base et avancées",
+                "Formules et calculs",
+                "Tableaux croisés dynamiques",
+                "Graphiques et visualisation",
+                "Macros et automatisation",
+                "Analyse de données"
             ],
-            duration: '1.5 mois',
+            duration: "1.5 mois",
             prerequisites: [
-                'Connaissances de base en informatique',
-                'Accès à Microsoft Excel',
-                'Ordinateur personnel recommandé'
+                "Connaissances de base en informatique",
+                "Accès à Microsoft Excel",
+                "Bases en mathématiques"
+            ]
+        },
+        windows: {
+            title: "Windows",
+            image: "images/formation_windows.png",
+            description: "Apprenez à maîtriser votre système d'exploitation Windows.",
+            program: [
+                "Installation et configuration",
+                "Gestion des fichiers et dossiers",
+                "Paramètres système",
+                "Sécurité et maintenance",
+                "Réseau et partage",
+                "Dépannage et optimisation"
+            ],
+            duration: "1 mois",
+            prerequisites: [
+                "Ordinateur avec Windows",
+                "Connaissances de base en informatique"
+            ]
+        },
+        general: {
+            title: "Informatique Générale",
+            image: "images/pilote_drone.png",
+            description: "Formation complète aux bases de l'informatique pour tous les niveaux.",
+            program: [
+                "Utilisation des systèmes d'exploitation",
+                "Suite bureautique (Word, Excel, PowerPoint)",
+                "Navigation sur Internet",
+                "Sécurité informatique",
+                "Gestion des fichiers et dossiers",
+                "Communication numérique"
+            ],
+            duration: "3 mois",
+            prerequisites: [
+                "Aucun prérequis",
+                "Motivation à apprendre"
+            ]
+        },
+        maintenance: {
+            title: "Maintenance",
+            image: "images/personnes-reparant.jpg",
+            description: "Formation professionnelle à la maintenance informatique.",
+            program: [
+                "Diagnostic et dépannage",
+                "Réparation hardware",
+                "Installation de logiciels",
+                "Réseaux informatiques",
+                "Sécurité des systèmes",
+                "Pratique sur cas réels"
+            ],
+            duration: "6 mois",
+            prerequisites: [
+                "Connaissances de base en informatique",
+                "Intérêt pour le hardware",
+                "Capacité d'analyse"
+            ]
+        },
+        infographie: {
+            title: "Infographie",
+            image: "images/fomation_infographie.png",
+            description: "Formation complète en design graphique et infographie.",
+            program: [
+                "Adobe Photoshop",
+                "Adobe Illustrator",
+                "Design graphique",
+                "Création de logos",
+                "Mise en page",
+                "Projets pratiques"
+            ],
+            duration: "4 mois",
+            prerequisites: [
+                "Connaissances de base en informatique",
+                "Sens artistique",
+                "Créativité"
+            ]
+        },
+        ia: {
+            title: "Intelligence Artificielle",
+            image: "images/formation_ia.png",
+            description: "Découvrez les bases de l'IA et ses applications pratiques.",
+            program: [
+                "Introduction à l'IA",
+                "Machine Learning",
+                "Deep Learning",
+                "Applications pratiques",
+                "Éthique de l'IA",
+                "Projets concrets"
+            ],
+            duration: "5 mois",
+            prerequisites: [
+                "Bases en programmation",
+                "Mathématiques",
+                "Logique algorithmique"
+            ]
+        },
+        drone: {
+            title: "Pilotage Drone",
+            image: "images/pilote_drone.png",
+            description: "Formation complète pour devenir pilote de drone certifié.",
+            program: [
+                "Réglementation aérienne",
+                "Techniques de pilotage",
+                "Maintenance des drones",
+                "Photographie aérienne",
+                "Applications professionnelles",
+                "Préparation à la certification"
+            ],
+            duration: "3 mois",
+            prerequisites: [
+                "Aucun prérequis",
+                "Bonne vue",
+                "Coordination"
+            ]
+        },
+        chatgpt: {
+            title: "ChatGPT",
+            image: "images/chatgtp.png",
+            description: "Formation professionnelle à l'utilisation avancée de ChatGPT.",
+            program: [
+                "Introduction à l'IA conversationnelle",
+                "Maîtrise des prompts",
+                "Applications professionnelles",
+                "Intégration dans le workflow",
+                "Éthique et bonnes pratiques",
+                "Projets pratiques"
+            ],
+            duration: "2 mois",
+            prerequisites: [
+                "Connaissances de base en informatique",
+                "Anglais basique",
+                "Curiosité pour l'IA"
             ]
         }
-        // Ajoutez d'autres formations ici
     };
 
     // Gestion des modales
@@ -228,27 +434,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const serviceId = card.getAttribute('data-id');
             const service = servicesData[serviceId];
             if (service) {
-                document.getElementById('modalTitle').textContent = service.title;
-                document.getElementById('modalImage').src = service.image;
-                document.getElementById('modalDescription').textContent = service.description;
-                
-                const featuresList = document.getElementById('modalFeatures');
-                featuresList.innerHTML = '';
-                service.features.forEach(feature => {
-                    const li = document.createElement('li');
-                    li.textContent = feature;
-                    featuresList.appendChild(li);
-                });
-
-                const benefitsList = document.getElementById('modalBenefits');
-                benefitsList.innerHTML = '';
-                service.benefits.forEach(benefit => {
-                    const li = document.createElement('li');
-                    li.textContent = benefit;
-                    benefitsList.appendChild(li);
-                });
-
-                serviceModal.style.display = 'block';
+                showServiceModal(service);
             }
         });
     });
@@ -259,29 +445,70 @@ document.addEventListener('DOMContentLoaded', function() {
             const formationId = card.getAttribute('data-id');
             const formation = formationsData[formationId];
             if (formation) {
-                document.getElementById('formationModalTitle').textContent = formation.title;
-                document.getElementById('formationModalImage').src = formation.image;
-                document.getElementById('formationModalDescription').textContent = formation.description;
-                document.getElementById('formationModalDuration').textContent = formation.duration;
-
-                const programList = document.getElementById('formationModalProgram');
-                programList.innerHTML = '';
-                formation.program.forEach(item => {
-                    const li = document.createElement('li');
-                    li.textContent = item;
-                    programList.appendChild(li);
-                });
-
-                const prerequisitesList = document.getElementById('formationModalPrerequisites');
-                prerequisitesList.innerHTML = '';
-                formation.prerequisites.forEach(item => {
-                    const li = document.createElement('li');
-                    li.textContent = item;
-                    prerequisitesList.appendChild(li);
-                });
-
-                formationModal.style.display = 'block';
+                showFormationModal(formation);
             }
         });
     });
-}); 
+});
+
+// Fonction pour afficher la modale de service
+function showServiceModal(serviceData) {
+    const modal = document.getElementById('serviceModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalFeatures = document.getElementById('modalFeatures');
+    const modalBenefits = document.getElementById('modalBenefits');
+
+    modalTitle.textContent = serviceData.title;
+    modalImage.src = serviceData.image;
+    modalDescription.textContent = serviceData.description;
+
+    modalFeatures.innerHTML = '';
+    serviceData.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        modalFeatures.appendChild(li);
+    });
+
+    modalBenefits.innerHTML = '';
+    serviceData.benefits.forEach(benefit => {
+        const li = document.createElement('li');
+        li.textContent = benefit;
+        modalBenefits.appendChild(li);
+    });
+
+    modal.style.display = 'block';
+}
+
+// Fonction pour afficher la modale de formation
+function showFormationModal(formationData) {
+    const modal = document.getElementById('formationModal');
+    const modalTitle = document.getElementById('formationModalTitle');
+    const modalImage = document.getElementById('formationModalImage');
+    const modalDescription = document.getElementById('formationModalDescription');
+    const modalProgram = document.getElementById('formationModalProgram');
+    const modalDuration = document.getElementById('formationModalDuration');
+    const modalPrerequisites = document.getElementById('formationModalPrerequisites');
+
+    modalTitle.textContent = formationData.title;
+    modalImage.src = formationData.image;
+    modalDescription.textContent = formationData.description;
+    modalDuration.textContent = formationData.duration;
+
+    modalProgram.innerHTML = '';
+    formationData.program.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        modalProgram.appendChild(li);
+    });
+
+    modalPrerequisites.innerHTML = '';
+    formationData.prerequisites.forEach(prerequisite => {
+        const li = document.createElement('li');
+        li.textContent = prerequisite;
+        modalPrerequisites.appendChild(li);
+    });
+
+    modal.style.display = 'block';
+} 

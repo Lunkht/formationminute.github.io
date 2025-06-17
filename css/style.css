@@ -210,6 +210,7 @@ h6 {
     top: 0;
     z-index: 1000;
     transition: transform 0.3s ease;
+    animation: fadeInDown 0.6s ease-out forwards;
 }
 
 .main-header.scroll-down {
@@ -347,6 +348,7 @@ h6 {
     position: relative;
     display: flex;
     align-items: start;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .hero::before {
@@ -419,6 +421,7 @@ h6 {
     padding: 60px 0;
     background:linear-gradient(90deg, rgb(111, 1, 50),#980202);
     color: white;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .smallAbout-content {
@@ -506,7 +509,7 @@ h6 {
     padding: 40px;
     background: linear-gradient(to left, rgb(236, 236, 238), rgb(209, 208, 210));
     display: block;
-
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .Certificat-content {
@@ -556,6 +559,7 @@ h6 {
 .services {
     padding: 80px 0;
     background-color: var(--color-light-gray);
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .services h2,
@@ -596,6 +600,7 @@ h6 {
     transition: transform 0.3s ease;
     position: relative;
     overflow: hidden;
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 .service-card:hover {
@@ -640,6 +645,7 @@ h6 {
 /* Formations Section */
 .formations {
     padding: 80px 0;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .formations-grid {
@@ -657,6 +663,7 @@ h6 {
     border: 0.4px solid var(--color-violet);
     position: relative;
     overflow: hidden;
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 .formation-card:hover {
@@ -693,6 +700,7 @@ h6 {
     padding: 120px 0;
     position: relative;
     overflow: hidden;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .page-hero::before {
@@ -1017,6 +1025,7 @@ h6 {
     color: var(--color-white);
     text-align: center;
     padding: 60px 0;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .cta-section h3 {
@@ -1042,6 +1051,7 @@ h6 {
     background: linear-gradient(90deg, rgb(111, 1, 50), rgb(152, 2, 2));
     color: var(--color-white);
     padding: 60px 0 20px;
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 .footer-grid {
@@ -1124,6 +1134,7 @@ h6 {
 .testimonials {
     padding: 80px 0;
     background-color: var(--color-white);
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .testimonials h2 {
@@ -1160,6 +1171,7 @@ h6 {
     border-radius: 1px;
     transition: transform 0.3s ease;
     border: 0.4px solid var(--color-violet2);
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 .testimonial-card:hover {
@@ -1278,6 +1290,7 @@ h6 {
 .newsletter {
     padding: 80px 0;
     background-color: var(--color-light-gray);
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .newsletter h2 {
@@ -1726,6 +1739,7 @@ border-radius: 17px;
 .partenaires {
     padding: 80px 0;
     background-color: var(--color-light-gray);
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .partenaires h2 {
@@ -1762,7 +1776,7 @@ border-radius: 17px;
     padding: 0;
     text-align: center;
     transition: transform 0.3s ease;
-    animation: fadeIn 0.5s ease-out;
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 .partenaire-card:hover {
@@ -2215,3 +2229,150 @@ border-radius: 17px;
 .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
 .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
 .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Classes d'animation */
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.animate-fade-in-left {
+    animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.animate-fade-in-right {
+    animation: fadeInRight 0.6s ease-out forwards;
+}
+
+/* Animation des sections */
+.services,
+.formations,
+.testimonials,
+.newsletter,
+.partenaires {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Animation des cartes */
+.service-card,
+.formation-card,
+.testimonial-card,
+.partenaire-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Délai d'animation pour les cartes */
+.service-card:nth-child(2),
+.formation-card:nth-child(2),
+.testimonial-card:nth-child(2),
+.partenaire-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.service-card:nth-child(3),
+.formation-card:nth-child(3),
+.testimonial-card:nth-child(3),
+.partenaire-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.service-card:nth-child(4),
+.formation-card:nth-child(4),
+.testimonial-card:nth-child(4),
+.partenaire-card:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+/* Animation du header */
+.main-header {
+    animation: fadeInDown 0.6s ease-out forwards;
+}
+
+/* Animation du hero */
+.hero {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Animation du footer */
+.main-footer {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Animation des boutons */
+.cta-button,
+.auth-button,
+.submit-button {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover,
+.auth-button:hover,
+.submit-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Animation des cartes au survol */
+.service-card,
+.formation-card,
+.testimonial-card,
+.partenaire-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover,
+.formation-card:hover,
+.testimonial-card:hover,
+.partenaire-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
