@@ -237,171 +237,207 @@ document.addEventListener('DOMContentLoaded', function() {
         word: {
             title: "Microsoft Word",
             image: "images/formation word.png",
-            description: "Formation complète au traitement de texte professionnel avec Microsoft Word.",
+            description: "Formation complète au traitement de texte professionnel avec Microsoft Word. Apprenez à créer des documents professionnels, à utiliser les fonctionnalités avancées et à collaborer efficacement.",
             program: [
                 "Interface et fonctionnalités de base",
                 "Mise en forme avancée",
                 "Tableaux et graphiques",
                 "Styles et modèles",
                 "Fusion et publipostage",
-                "Collaboration et révision"
+                "Collaboration et révision",
+                "Macros et automatisation",
+                "Gestion des références"
             ],
             duration: "1 mois",
             prerequisites: [
                 "Connaissances de base en informatique",
                 "Accès à Microsoft Word",
                 "Motivation et assiduité"
-            ]
+            ],
+            price: "299€",
+            certification: "Certification Microsoft Office Specialist (MOS)"
         },
         excel: {
             title: "Microsoft Excel",
             image: "images/formation_excel.png",
-            description: "Maîtrisez les tableurs avec notre formation Excel complète.",
+            description: "Maîtrisez les tableurs avec notre formation Excel complète. Devenez un expert en analyse de données, création de tableaux croisés dynamiques et automatisation des tâches.",
             program: [
                 "Fonctions de base et avancées",
                 "Formules et calculs",
                 "Tableaux croisés dynamiques",
                 "Graphiques et visualisation",
                 "Macros et automatisation",
-                "Analyse de données"
+                "Analyse de données",
+                "Tableaux de bord",
+                "Power Query et Power Pivot"
             ],
             duration: "1.5 mois",
             prerequisites: [
                 "Connaissances de base en informatique",
                 "Accès à Microsoft Excel",
                 "Bases en mathématiques"
-            ]
+            ],
+            price: "399€",
+            certification: "Certification Microsoft Office Specialist (MOS)"
         },
         windows: {
             title: "Windows",
             image: "images/formation_windows.png",
-            description: "Apprenez à maîtriser votre système d'exploitation Windows.",
+            description: "Apprenez à maîtriser votre système d'exploitation Windows. Cette formation vous permettra d'optimiser votre utilisation quotidienne et de résoudre les problèmes courants.",
             program: [
                 "Installation et configuration",
                 "Gestion des fichiers et dossiers",
                 "Paramètres système",
                 "Sécurité et maintenance",
                 "Réseau et partage",
-                "Dépannage et optimisation"
+                "Dépannage et optimisation",
+                "Outils système",
+                "Gestion des utilisateurs"
             ],
             duration: "1 mois",
             prerequisites: [
                 "Ordinateur avec Windows",
                 "Connaissances de base en informatique"
-            ]
+            ],
+            price: "249€",
+            certification: "Certification Microsoft Technology Associate (MTA)"
         },
         general: {
             title: "Informatique Générale",
             image: "images/pilote_drone.png",
-            description: "Formation complète aux bases de l'informatique pour tous les niveaux.",
+            description: "Formation complète aux bases de l'informatique pour tous les niveaux. Acquérez les compétences essentielles pour utiliser efficacement votre ordinateur au quotidien.",
             program: [
                 "Utilisation des systèmes d'exploitation",
                 "Suite bureautique (Word, Excel, PowerPoint)",
                 "Navigation sur Internet",
                 "Sécurité informatique",
                 "Gestion des fichiers et dossiers",
-                "Communication numérique"
+                "Communication numérique",
+                "Outils de productivité",
+                "Maintenance basique"
             ],
             duration: "3 mois",
             prerequisites: [
                 "Aucun prérequis",
                 "Motivation à apprendre"
-            ]
+            ],
+            price: "599€",
+            certification: "Certification Formation Minute"
         },
         maintenance: {
             title: "Maintenance",
             image: "images/personnes-reparant.jpg",
-            description: "Formation professionnelle à la maintenance informatique.",
+            description: "Formation professionnelle à la maintenance informatique. Devenez un technicien qualifié capable de diagnostiquer et résoudre les problèmes hardware et software.",
             program: [
                 "Diagnostic et dépannage",
                 "Réparation hardware",
                 "Installation de logiciels",
                 "Réseaux informatiques",
                 "Sécurité des systèmes",
-                "Pratique sur cas réels"
+                "Pratique sur cas réels",
+                "Gestion des stocks",
+                "Service client"
             ],
             duration: "6 mois",
             prerequisites: [
                 "Connaissances de base en informatique",
                 "Intérêt pour le hardware",
                 "Capacité d'analyse"
-            ]
+            ],
+            price: "1299€",
+            certification: "Certification CompTIA A+"
         },
         infographie: {
             title: "Infographie",
             image: "images/fomation_infographie.png",
-            description: "Formation complète en design graphique et infographie.",
+            description: "Formation complète en design graphique et infographie. Développez votre créativité et apprenez à créer des designs professionnels avec les outils les plus utilisés.",
             program: [
                 "Adobe Photoshop",
                 "Adobe Illustrator",
                 "Design graphique",
                 "Création de logos",
                 "Mise en page",
-                "Projets pratiques"
+                "Projets pratiques",
+                "Théorie des couleurs",
+                "Typographie"
             ],
             duration: "4 mois",
             prerequisites: [
                 "Connaissances de base en informatique",
                 "Sens artistique",
                 "Créativité"
-            ]
+            ],
+            price: "899€",
+            certification: "Certification Adobe Certified Associate (ACA)"
         },
         ia: {
             title: "Intelligence Artificielle",
             image: "images/formation_ia.png",
-            description: "Découvrez les bases de l'IA et ses applications pratiques.",
+            description: "Découvrez les bases de l'IA et ses applications pratiques. Cette formation vous permettra de comprendre et d'utiliser les technologies d'intelligence artificielle dans votre domaine.",
             program: [
                 "Introduction à l'IA",
                 "Machine Learning",
                 "Deep Learning",
                 "Applications pratiques",
                 "Éthique de l'IA",
-                "Projets concrets"
+                "Projets concrets",
+                "Python pour l'IA",
+                "Frameworks populaires"
             ],
             duration: "5 mois",
             prerequisites: [
                 "Bases en programmation",
                 "Mathématiques",
                 "Logique algorithmique"
-            ]
+            ],
+            price: "1499€",
+            certification: "Certification IBM AI Engineering"
         },
         drone: {
             title: "Pilotage Drone",
             image: "images/pilote_drone.png",
-            description: "Formation complète pour devenir pilote de drone certifié.",
+            description: "Formation complète pour devenir pilote de drone certifié. Apprenez les techniques de pilotage, la réglementation et les applications professionnelles des drones.",
             program: [
                 "Réglementation aérienne",
                 "Techniques de pilotage",
                 "Maintenance des drones",
                 "Photographie aérienne",
                 "Applications professionnelles",
-                "Préparation à la certification"
+                "Préparation à la certification",
+                "Sécurité et prévention",
+                "Projets pratiques"
             ],
             duration: "3 mois",
             prerequisites: [
                 "Aucun prérequis",
                 "Bonne vue",
                 "Coordination"
-            ]
+            ],
+            price: "799€",
+            certification: "Certification DGAC"
         },
         chatgpt: {
             title: "ChatGPT",
             image: "images/chatgtp.png",
-            description: "Formation professionnelle à l'utilisation avancée de ChatGPT.",
+            description: "Formation professionnelle à l'utilisation avancée de ChatGPT. Maîtrisez les techniques de prompt engineering et intégrez l'IA dans votre workflow professionnel.",
             program: [
                 "Introduction à l'IA conversationnelle",
                 "Maîtrise des prompts",
                 "Applications professionnelles",
                 "Intégration dans le workflow",
                 "Éthique et bonnes pratiques",
-                "Projets pratiques"
+                "Projets pratiques",
+                "Automatisation des tâches",
+                "Optimisation des résultats"
             ],
             duration: "2 mois",
             prerequisites: [
                 "Connaissances de base en informatique",
                 "Anglais basique",
                 "Curiosité pour l'IA"
-            ]
+            ],
+            price: "499€",
+            certification: "Certification Formation Minute"
         }
     };
 
@@ -490,11 +526,15 @@ function showFormationModal(formationData) {
     const modalProgram = document.getElementById('formationModalProgram');
     const modalDuration = document.getElementById('formationModalDuration');
     const modalPrerequisites = document.getElementById('formationModalPrerequisites');
+    const modalPrice = document.getElementById('formationModalPrice');
+    const modalCertification = document.getElementById('formationModalCertification');
 
     modalTitle.textContent = formationData.title;
     modalImage.src = formationData.image;
     modalDescription.textContent = formationData.description;
     modalDuration.textContent = formationData.duration;
+    modalPrice.textContent = formationData.price;
+    modalCertification.textContent = formationData.certification;
 
     modalProgram.innerHTML = '';
     formationData.program.forEach(item => {
