@@ -75,32 +75,14 @@ registerForm.addEventListener('submit', async (e) => {
         return;
     }
     
-    // Validation du numéro de téléphone
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!phoneRegex.test(telephone)) {
-        showError(registerForm, 'Veuillez entrer un numéro de téléphone valide (10 chiffres)');
-        return;
-    }
-    
     try {
         // Création de l'utilisateur
         const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
         const user = userCredential.user;
         
-        // Mise à jour du profil avec les informations supplémentaires
+        // Mise à jour du profil
         await user.updateProfile({
             displayName: `${prenom} ${nom}`
-        });
-        
-        // Stockage des informations supplémentaires dans Firestore
-        await firebase.firestore().collection('users').doc(user.uid).set({
-            prenom,
-            nom,
-            email,
-            telephone,
-            adresse,
-            besoin,
-            dateInscription: firebase.firestore.FieldValue.serverTimestamp()
         });
         
         showSuccess(registerForm, 'Inscription réussie !');
