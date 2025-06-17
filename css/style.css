@@ -504,7 +504,7 @@ h6 {
 /* sertification*/
 
 
-/* Section SmallAbout */
+/* Section Certificat  */
 .Certificat{
     padding: 40px;
     background: linear-gradient(to left, rgb(236, 236, 238), rgb(209, 208, 210));
@@ -915,7 +915,7 @@ h6 {
 .about-image img {
     max-width: 100%;
     height: auto;
-    border-radius: 100%;
+    border-radius: 15px;
 }
 
 @media (max-width: 768px) {
@@ -1340,7 +1340,6 @@ h6 {
 .newsletter {
     padding: 80px 0;
     background-color: var(--color-light-gray);
-    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .newsletter h2 {
@@ -1375,6 +1374,7 @@ h6 {
 .newsletter-content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 50px;
     margin-top: 40px;
     background-color: var(--color-white);
@@ -1384,14 +1384,19 @@ h6 {
 }
 
 .newsletter-form {
-    flex: 1;
     display: flex;
-    gap: 20px;
-    align-items: flex-start;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 470px;
 }
 
 .newsletter-form .form-group {
-    flex: 1;
+    width: 170px;
+    flex-shrink: 0;
+    flex-grow: 0;
     margin-bottom: 0;
 }
 
@@ -1422,6 +1427,8 @@ h6 {
     align-items: center;
     gap: 10px;
     transition: all 0.3s ease;
+    flex-shrink: 0;
+    width: 110px;
 }
 
 .newsletter-form .submit-button:hover {
@@ -1430,9 +1437,10 @@ h6 {
 }
 
 .newsletter-info {
-    flex: 1;
     text-align: center;
     padding: 20px;
+    flex-shrink: 0;
+    width: 250px;
 }
 
 .newsletter-info i {
@@ -1452,22 +1460,32 @@ h6 {
     .newsletter-content {
         flex-direction: column;
         padding: 30px;
+        gap: 20px;
     }
 
     .newsletter-form {
         flex-direction: column;
+        width: 100%;
+        flex-wrap: wrap;
+        width: auto;
+    }
+
+    .newsletter-form .form-group {
         width: 100%;
     }
 
     .newsletter-form .submit-button {
         width: 100%;
         justify-content: center;
+        width: auto;
     }
 
     .newsletter-info {
         padding: 20px 0 0;
+        flex: none;
     }
 }
+
 
 /* Styles pour les modales */
 .modal {
@@ -1706,4 +1724,103 @@ h6 {
 
 .form-footer a:hover {
     text-decoration: underline;
+}
+
+/* Profile Button */
+.profile-button {
+    margin-left: 20px;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-violet);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.profile-link:hover {
+    background-color: var(--color-dark-violet);
+}
+
+.profile-link i {
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .profile-button {
+        margin-left: 10px;
+    }
+}
+
+/* Partenaires Section */
+.partenaires {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.partenaires h2 {
+    text-align: left;
+    margin-bottom: 50px;
+    color: var(--color-violet2);
+    font-size: 42px;
+    font-weight: 700;
+    position: relative;
+    padding-left: 20px;
+}
+
+.partenaires h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 40px;
+    background-color: var(--color-violet2);
+    border-radius: 4px;
+}
+
+.partenaires-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0px;
+    margin-top: 40px;
+}
+
+.partenaire-card {
+    padding: 0px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.partenaire-card:hover {
+    transform: translateY(-5px);
+}
+
+.partenaire-card img {
+    max-width: 100px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.partenaire-card:hover img {
+    filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {
+    .partenaires-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .partenaire-card img {
+        max-width: 120px;
+    }
 }

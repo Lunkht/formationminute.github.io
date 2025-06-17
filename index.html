@@ -46,10 +46,13 @@
                     <li><a href="pages/boutique.html">Boutique</a></li>
                     <li><a href="pages/apropos.html">À Propos</a></li>
                     <li><a href="pages/contact.html">Contact</a></li>
-
                 </ul>
-
             </nav>
+            <div class="profile-button">
+                <a href="pages/profil.html" class="profile-link">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -77,7 +80,7 @@
                     <p>Nous vous aidons à répondre de manière précise, efficace et opérationnelle à ces besoins.</p>
                 </div>
                 <div class="about-image">
-                    <img src="images/logo.jpg" alt="Formation Minute - À propos">
+                    <img src="images/casting.png" alt="Formation Minute - À propos">
                 </div>
             </div>
         </div>
@@ -167,17 +170,17 @@
             <p class="section-description">Formez-vous aux technologies de demain avec nos programmes d'apprentissage pratiques et adaptés à tous les niveaux.</p>
             <div class="formations-grid">
                 <div class="formation-card" data-id="word">
-                    <img src="images/formation word.png" alt="Microsoft Word">
+                    <img src="images/repair1.png" alt="Microsoft Word">
                     <div class="fomation-texts">
-                        <h3>Microsoft Word</h3>
+                        <h3>Agent de Reconditionnement Numérique</h3>
                     <p>Traitement de texte professionnel</p>
                     </div>
                     
                 </div>
                 <div class="formation-card" data-id="excel">
-                    <img src="images/formation_excel.png" alt="Microsoft Excel">
+                    <img src="images/personnes-reparant.jpg" alt="Microsoft Excel">
                     <div class="fomation-texts"> 
-                        <h3>Microsoft Excel</h3>
+                        <h3>Réparateur Smartphones & Tablettes – Créer et gérer mon entreprise</h3>
                         <p>Maîtrisez les tableurs</p>
                     </div>
                    
@@ -185,7 +188,7 @@
                 <div class="formation-card">
                     <img src="images/formation_windows.png" alt="Windows">
                     <div class="fomation-texts">
-                        <h3>Windows</h3>
+                        <h3>Les essentiels de l’informatique : Maîtriser la bureautique – Tableur, Traitement de texte, Présentation</h3>
                     <p>Système d'exploitation</p>
                     </div>
                     
@@ -193,7 +196,7 @@
                 <div class="formation-card">
                     <img src="images/pilote_drone.png" alt="Informatique Générale">
                     <div class="fomation-texts">
-                        <h3>Informatique Générale</h3>
+                        <h3>Les essentiels de l’informatique : Internet, Mail, Messageries et les Réseaux</h3>
                     <p>Maîtrisez les bases de l'informatique</p>
                     </div>
                     
@@ -201,7 +204,7 @@
                 <div class="formation-card">
                     <img src="images/personnes-reparant.jpg" alt="Maintenance">
                     <div class="fomation-texts">
-                        <h3>Maintenance</h3>
+                        <h3>Les essentiels de l’informatique pour maîtriser l’ordinateur</h3>
                     <p>Apprenez la réparation et maintenance</p>
                     </div>
                     
@@ -209,7 +212,7 @@
                 <div class="formation-card">
                     <img src="images/fomation_infographie.png" alt="Infographie">
                     <div class="fomation-texts">
-                        <h3>Infographie</h3>
+                        <h3>Les essentiels de l’informatique : Découvrir et maîtriser son environnement numérique</h3>
                     <p>Créez des designs professionnels</p>
                     </div>
                     
@@ -292,31 +295,59 @@
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter" id="newsletter">
-        <div class="container">
-            <h2>Newsletter</h2>
-            <p class="section-description">Restez informé de nos dernières actualités, formations et offres spéciales en vous abonnant à notre newsletter.</p>
-            <div class="newsletter-content">
-                <form class="newsletter-form" action="#" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Votre nom" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Votre email" required>
-                    </div>
-                    <button type="submit" class="submit-button">
-                        <i class="fas fa-paper-plane"></i>
-                        S'abonner
-                    </button>
-                </form>
-                <div class="newsletter-info">
-                    <i class="fas fa-envelope-open-text"></i>
-                    <p>Recevez nos actualités directement dans votre boîte mail</p>
+ <!-- Newsletter Section -->
+ <section class="newsletter" id="newsletter">
+    <div class="container">
+        <h2>Newsletter</h2>
+        <p class="section-description">Restez informé de nos dernières actualités, formations et offres spéciales en vous abonnant à notre newsletter.</p>
+        <div class="newsletter-content">
+            <form class="newsletter-form" action="#" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Votre nom" required>
                 </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Votre email" required>
+                </div>
+                <button type="submit" class="submit-button">
+                    <i class="fas fa-paper-plane"></i>
+                    S'abonner
+                </button>
+            </form>
+            <div class="newsletter-info">
+                <i class="fas fa-envelope-open-text"></i>
+                <p>Recevez nos actualités directement dans votre boîte mail</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+<!-- Partenaires Section -->
+<section class="partenaires" id="partenaires">
+    <div class="container">
+        <h2>Nos Partenaires</h2>
+        <p class="section-description">Nous collaborons avec des entreprises leaders pour vous offrir les meilleurs services et formations.</p>
+        <div class="partenaires-grid">
+            <div class="partenaire-card">
+                <img src="images/logo.png" alt="HP">
+            </div>
+            <div class="partenaire-card">
+                <img src="images/logo.png" alt="Microsoft">
+            </div>
+            <div class="partenaire-card">
+                <img src="images/logo.png" alt="Samsung">
+            </div>
+            <div class="partenaire-card">
+                <img src="images/logo.png" alt="Cisco">
+            </div>
+            <div class="partenaire-card">
+                <img src="images/logo.png" alt="Intel">
+            </div>
+          
+        </div>
+    </div>
+</section>
+
 
     <!-- Modales -->
     <div class="modal" id="serviceModal">
@@ -392,32 +423,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Partenaires Section -->
-    <section class="partenaires" id="partenaires">
-        <div class="container">
-            <h2>Nos Partenaires</h2>
-            <p class="section-description">Nous collaborons avec des entreprises leaders pour vous offrir les meilleurs services et formations.</p>
-            <div class="partenaires-grid">
-                <div class="partenaire-card">
-                    <img src="images/logo.png" alt="HP">
-                </div>
-                <div class="partenaire-card">
-                    <img src="images/logo.png" alt="Microsoft">
-                </div>
-                <div class="partenaire-card">
-                    <img src="images/logo.png" alt="Samsung">
-                </div>
-                <div class="partenaire-card">
-                    <img src="images/logo.png" alt="Cisco">
-                </div>
-                <div class="partenaire-card">
-                    <img src="images/logo.png" alt="Intel">
-                </div>
-              
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="main-footer">

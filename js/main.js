@@ -485,7 +485,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
+}); 
 
 // Fonction pour afficher la modale de service
 function showServiceModal(serviceData) {
