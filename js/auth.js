@@ -1,9 +1,9 @@
 // Configuration Firebase
 const firebaseConfig = {
     // Remplacez ces valeurs par vos propres configurations Firebase
-    apiKey: "VOTRE_API_KEY",
-    authDomain: "votre-projet.firebaseapp.com",
-    projectId: "votre-projet",
+    apiKey: "AIzaSyCXxk3bBiMl0C-zoqbE1rCG5xB1Uf1gppE",
+    authDomain: "Formationminute",
+    projectId: "formationminute-cd486",
     storageBucket: "votre-projet.appspot.com",
     messagingSenderId: "votre-messaging-sender-id",
     appId: "votre-app-id"
