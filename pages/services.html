@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Electro Business Guinée</title>
+    <title>Services - Formation Minute</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="../images/favicon.jpg" type="image/x-icon">
 </head>
 <body>
     <!-- Top Navigation -->
     <div class="top-nav">
         <div class="container">
             <div class="contact-info">
-                <span><i class="fas fa-envelope"></i> electrobusinessguinee@gmail.com</span>
+                <span><i class="fas fa-envelope"></i>contact@formationminute.net</span>
             </div>
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="signup-layout" style="display: flex;">
+                <li class="connexion-btn"><a href="./connexion.html">Se connecter</a></li>
+                <li class="inscription-btn"><a href="./inscription_form.html">S'inscrire</a></li>
             </div>
         </div>
     </div>
@@ -26,7 +31,7 @@
     <header class="main-header">
         <div class="container">
             <div class="logo">
-                <img src="images/logo-ebg.png" alt="ElectroBusinessGuinee Logo" class="logo-img">
+                <img src="../images/logo.jpg" alt="Formation Minute Logo" class="logo-img">
             </div>
             <button class="menu-toggle" aria-label="Menu">
                 <i class="fas fa-bars"></i>
@@ -43,76 +48,49 @@
             </nav>
         </div>
     </header>
-    <!-- Services Hero Section -->
-    <section class="page-hero">
+
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
             <h2>Nos Services</h2>
-            <p>Des solutions informatiques complètes pour vos besoins</p>
-        </div>
-    </section>
-
-    <!-- Services Details Section -->
-    <section class="services-details">
-        <div class="container">
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-laptop"></i>
-                </div>
-                <div class="service-content">
+            <p class="section-description">Découvrez notre gamme complète de services informatiques professionnels, conçus pour répondre à tous vos besoins numériques.</p>
+            <div class="services-grid">
+                <div class="service-card" data-id="maintenance">
+                    <img src="../images/maintenance.png" alt="Maintenance Informatique">
                     <h3>Maintenance Informatique</h3>
-                    <p>Nous offrons des services de maintenance complète pour vos équipements informatiques :</p>
-                    <ul>
-                        <li>Réparation d'ordinateurs et smartphones</li>
-                        <li>Installation de logiciels et systèmes d'exploitation</li>
-                        <li>Nettoyage et optimisation</li>
-                        <li>Récupération de données</li>
-                        <li>Diagnostic et dépannage</li>
-                    </ul>
+                    <p>Réparation et maintenance d'ordinateurs et smartphones</p>
                 </div>
-            </div>
-
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                </div>
-                <div class="service-content">
+                <div class="service-card" data-id="vente">
+                    <img src="../images/sales.png" alt="Vente d'Équipements">
                     <h3>Vente d'Équipements</h3>
-                    <p>Nous proposons une large gamme d'équipements informatiques :</p>
-                    <ul>
-                        <li>Ordinateurs et accessoires</li>
-                        <li>Smartphones et tablettes</li>
-                        <li>Périphériques (imprimantes, scanners, etc.)</li>
-                        <li>Composants informatiques</li>
-                        <li>Matériel de réseau</li>
-                    </ul>
+                    <p>Outils et équipements informatiques de qualité</p>
+                </div>
+                <div class="service-card" data-id="Internet">
+                    <img src="../images/internet.png" alt="internet">
+                    <h3>Access Internet</h3>
+                    <p>Acces a Internet dans nos locaux pour vous facilité vos navigation en tout discrétion et Sécurité</p>
+                </div>
+                <div class="service-card" data-id="adm">
+                    <img src="../images/impression.png" alt="Assistance Voyage">
+                    <h3>Démarchage Administrative</h3>
+                    <p>Quel quand soit le vos besoins Administrative nous nous Occupons de tout pour vous Facilité vos besoins</p>
+                </div>
+                <div class="service-card" data-id="cv">
+                    <img src="../images/graphic.png" alt="Conception Graphique">
+                    <h3>Traitement de CV</h3>
+                    <p>Nous traintons vos CV</p>
+                </div>
+                <div class="service-card" data-id="print">
+                    <img src="../images/graphic.png" alt="Conception Graphique">
+                    <h3>Électroménager</h3>
+                    <p>Réparation et Maintenance</p>
+                </div>
+                <div class="service-card" data-id="formation">
+                    <img src="../images/graphic.png" alt="Conception Graphique">
+                    <h3>Formations</h3>
+                    <p>Formations en Informatique</p>
                 </div>
             </div>
-
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-plane"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Assistance Voyage</h3>
-                    <p>Nous vous accompagnons dans vos démarches de voyage :</p>
-                    <ul>
-                        <li>Assistance pour l'obtention de visas</li>
-                        <li>Réservation de billets d'avion</li>
-                        <li>Conseils pour les formalités administratives</li>
-                        <li>Support pour les documents de voyage</li>
-                    </ul>
-                    <a href="voyage.html" class="cta-button" style="display: inline-block; margin-top: 15px;">En savoir plus</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="cta-section">
-        <div class="container">
-            <h3>Besoin de nos services ?</h3>
-            <p>Contactez-nous dès maintenant pour un devis personnalisé</p>
-            <a href="contact.html" class="cta-button">Nous Contacter</a>
         </div>
     </section>
 
@@ -122,22 +100,43 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>À Propos</h3>
-                    <p>ElectroBusinessGuinee est votre partenaire de confiance pour tous vos besoins en formation et services informatiques en Guinée.</p>
+                    <p>Formationminute est votre partenaire de confiance pour tous vos besoins en formation et services informatiques en Guinée.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Conakry, Guinée</p>
-                    <p><i class="fas fa-phone"></i> +224 612 33 44 11 / +224 625 31 58 87</p>
-                    <p><i class="fas fa-envelope"></i> contact@electrobusinessguinee.com</p>
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#maintenance">Maintenance Informatique</a></li>
+                        <li><a href="services.html#vente">Vente d'Équipements</a></li>
+                        <li><a href="services.html#voyage">Assistance Voyage</a></li>
+                        <li><a href="services.html#formation">Formation en informatique</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Formations</h3>
+                    <ul>
+                        <li><a href="formations.html#word">Microsoft Word</a></li>
+                        <li><a href="formations.html#excel">Microsoft Excel</a></li>
+                        <li><a href="formations.html#windows">Windows</a></li>
+                        <li><a href="formations.html#general">Informatique Générale</a></li>
+                        <li><a href="formations.html#maintenance">Maintenance</a></li>
+                        <li><a href="formations.html#infographie">Infographie</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Liens Rapides</h3>
                     <ul>
-                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="../index.html">Accueil</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="formations.html">Formations</a></li>
+                        <li><a href="apropos.html">À Propos</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Paris, Boulevard / ....</p>
+                    <p><i class="fas fa-phone"></i> 33 45 53 3224</p>
+                    <p><i class="fas fa-envelope"></i> formationminute@formationminute.net</p>
                 </div>
                 <div class="footer-section">
                     <h3>Suivez-nous</h3>
@@ -149,11 +148,11 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 ElectroBusinessGuinee. Tous droits réservés.</p>
+                <p>&copy; 2024 Formationminute. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html> 

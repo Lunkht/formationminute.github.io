@@ -3,30 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formations - Electro Business Guinée</title>
+    <title>Formations - Formation Minute</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="../images/favicon.jpg" type="image/x-icon">
 </head>
 <body>
     <!-- Top Navigation -->
     <div class="top-nav">
         <div class="container">
             <div class="contact-info">
-                <span><i class="fas fa-envelope"></i> electrobusinessguinee@gmail.com</span>
+                <span><i class="fas fa-envelope"></i>contact@formationminute.net</span>
             </div>
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
             </div>
+            <div class="signup-layout" style="display: flex;">
+                <li class="connexion-btn"><a href="./connexion.html">Se connecter</a></li>
+                <li class="inscription-btn"><a href="./inscription_form.html">S'inscrire</a></li>
+            </div>
         </div>
     </div>
-
     <!-- Main Header -->
     <header class="main-header">
         <div class="container">
             <div class="logo">
-                <img src="images/logo-ebg.png" alt="ElectroBusinessGuinee Logo" class="logo-img">
+                <img src="../images/logo.jpg" alt="Formation Minute Logo" class="logo-img">
             </div>
             <button class="menu-toggle" aria-label="Menu">
                 <i class="fas fa-bars"></i>
@@ -43,172 +47,77 @@
             </nav>
         </div>
     </header>
-    <!-- Formations Hero Section -->
-    <section class="page-hero">
+
+    <!-- Formations Section -->
+    <section class="formations" id="formations">
         <div class="container">
-            <h2>Nos Formations</h2>
-            <p>Développez vos compétences avec nos formations professionnelles</p>
-        </div>
-    </section>
-
-    <!-- Formations Details Section -->
-    <section class="formations-details">
-        <div class="container">
-            <div class="formation-item">
-                <div class="formation-icon">
-                    <i class="fas fa-file-word"></i>
+            <h2>Formations</h2>
+            <p class="section-description">Formez-vous aux technologies de demain avec nos programmes d'apprentissage pratiques et adaptés à tous les niveaux.</p>
+            <div class="formations-grid">
+                <div class="formation-card" data-id="word">
+                    <img src="../images/formation word.png" alt="Microsoft Word">
+                    <div class="fomation-texts">
+                        <h3>Microsoft Word</h3>
+                        <p>Traitement de texte professionnel</p>
+                    </div>
                 </div>
-                <div class="formation-content">
-                    <h3>Microsoft Word</h3>
-                    <p>Maîtrisez le traitement de texte professionnel :</p>
-                    <ul>
-                        <li>Interface et fonctionnalités de base</li>
-                        <li>Mise en forme avancée</li>
-                        <li>Tableaux et graphiques</li>
-                        <li>Styles et modèles</li>
-                        <li>Fusion et publipostage</li>
-                        <li>Collaboration et révision</li>
-                    </ul>
-                    <p class="duration">Durée : 1 mois</p>
+                <div class="formation-card" data-id="excel">
+                    <img src="../images/formation_excel.png" alt="Microsoft Excel">
+                    <div class="fomation-texts">
+                        <h3>Microsoft Excel</h3>
+                        <p>Maîtrisez les tableurs</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="formation-item">
-                <div class="formation-icon">
-                    <i class="fas fa-file-excel"></i>
+                <div class="formation-card">
+                    <img src="../images/formation_windows.png" alt="Windows">
+                    <div class="fomation-texts">
+                        <h3>Windows</h3>
+                        <p>Système d'exploitation</p>
+                    </div>
                 </div>
-                <div class="formation-content">
-                    <h3>Microsoft Excel</h3>
-                    <p>Devenez expert en tableur :</p>
-                    <ul>
-                        <li>Fonctions de base et avancées</li>
-                        <li>Formules et calculs</li>
-                        <li>Tableaux croisés dynamiques</li>
-                        <li>Graphiques et visualisation</li>
-                        <li>Macros et automatisation</li>
-                        <li>Analyse de données</li>
-                    </ul>
-                    <p class="duration">Durée : 1.5 mois</p>
+                <div class="formation-card">
+                    <img src="../images/pilote_drone.png" alt="Informatique Générale">
+                    <div class="fomation-texts">
+                        <h3>Informatique Générale</h3>
+                        <p>Maîtrisez les bases de l'informatique</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="formation-item">
-                <div class="formation-icon">
-                    <i class="fab fa-windows"></i>
+                <div class="formation-card">
+                    <img src="../images/personnes-reparant.jpg" alt="Maintenance">
+                    <div class="fomation-texts">
+                        <h3>Maintenance</h3>
+                        <p>Apprenez la réparation et maintenance</p>
+                    </div>
                 </div>
-                <div class="formation-content">
-                    <h3>Windows</h3>
-                    <p>Maîtrisez votre système d'exploitation :</p>
-                    <ul>
-                        <li>Installation et configuration</li>
-                        <li>Gestion des fichiers et dossiers</li>
-                        <li>Paramètres système</li>
-                        <li>Sécurité et maintenance</li>
-                        <li>Réseau et partage</li>
-                        <li>Dépannage et optimisation</li>
-                    </ul>
-                    <p class="duration">Durée : 1 mois</p>
+                <div class="formation-card">
+                    <img src="../images/fomation_infographie.png" alt="Infographie">
+                    <div class="fomation-texts">
+                        <h3>Infographie</h3>
+                        <p>Créez des designs professionnels</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="formation-item">
-                <div class="formation-icon">
-                    <i class="fas fa-desktop"></i>
+                <div class="formation-card">
+                    <img src="../images/formation_ia.png" alt="Intelligence Artificielle">
+                    <div class="fomation-texts">
+                        <h3>Intelligence Artificielle</h3>
+                        <p>Découvrez l'IA et ses applications</p>
+                    </div>
                 </div>
-                <div class="formation-content">
-                    <h3>Informatique Générale</h3>
-                    <p>Une formation complète pour maîtriser les bases de l'informatique :</p>
-                    <ul>
-                        <li>Utilisation des systèmes d'exploitation</li>
-                        <li>Suite bureautique (Word, Excel, PowerPoint)</li>
-                        <li>Navigation sur Internet</li>
-                        <li>Sécurité informatique</li>
-                        <li>Gestion des fichiers et dossiers</li>
-                    </ul>
-                    <p class="duration">Durée : 3 mois</p>
+                <div class="formation-card">
+                    <img src="../images/pilote_drone.png" alt="Pilotage Drone">
+                    <div class="fomation-texts">
+                        <h3>Pilotage Drone</h3>
+                        <p>Devenez pilote de drone certifié</p>
+                    </div>
+                </div>
+                <div class="formation-card">
+                    <img src="../images/chatgtp.png" alt="ChatGPT">
+                    <div class="fomation-texts">
+                        <h3>ChatGPT</h3>
+                        <p>Devenez Pro en intelligence artificielle</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="formation-item">
-                <div class="formation-icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <div class="formation-content">
-                    <h3>Maintenance Informatique</h3>
-                    <p>Apprenez à réparer et maintenir les équipements informatiques :</p>
-                    <ul>
-                        <li>Diagnostic et dépannage</li>
-                        <li>Réparation hardware</li>
-                        <li>Installation de logiciels</li>
-                        <li>Réseaux informatiques</li>
-                        <li>Sécurité des systèmes</li>
-                    </ul>
-                    <p class="duration">Durée : 6 mois</p>
-                </div>
-            </div>
-
-            <div class="formation-item">
-                <div class="formation-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <div class="formation-content">
-                    <h3>Infographie</h3>
-                    <p>Créez des designs professionnels avec nos outils :</p>
-                    <ul>
-                        <li>Adobe Photoshop</li>
-                        <li>Adobe Illustrator</li>
-                        <li>Design graphique</li>
-                        <li>Création de logos</li>
-                        <li>Mise en page</li>
-                    </ul>
-                    <p class="duration">Durée : 4 mois</p>
-                </div>
-            </div>
-
-            <div class="formation-item">
-                <div class="formation-icon">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <div class="formation-content">
-                    <h3>Intelligence Artificielle</h3>
-                    <p>Découvrez les bases de l'IA et ses applications :</p>
-                    <ul>
-                        <li>Introduction à l'IA</li>
-                        <li>Machine Learning</li>
-                        <li>Deep Learning</li>
-                        <li>Applications pratiques</li>
-                        <li>Éthique de l'IA</li>
-                    </ul>
-                    <p class="duration">Durée : 5 mois</p>
-                </div>
-            </div>
-
-            <div class="formation-item">
-                <div class="formation-icon">
-                    <i class="fas fa-drone"></i>
-                </div>
-                <div class="formation-content">
-                    <h3>Pilotage Drone</h3>
-                    <p>Devenez pilote de drone certifié :</p>
-                    <ul>
-                        <li>Réglementation aérienne</li>
-                        <li>Techniques de pilotage</li>
-                        <li>Maintenance des drones</li>
-                        <li>Photographie aérienne</li>
-                        <li>Applications professionnelles</li>
-                    </ul>
-                    <p class="duration">Durée : 3 mois</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="cta-section">
-        <div class="container">
-            <h3>Prêt à commencer votre formation ?</h3>
-            <p>Inscrivez-vous dès maintenant pour la prochaine session</p>
-            <a href="contact.html" class="cta-button">S'inscrire</a>
         </div>
     </section>
 
@@ -218,22 +127,43 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>À Propos</h3>
-                    <p>ElectroBusinessGuinee est votre partenaire de confiance pour tous vos besoins en formation et services informatiques en Guinée.</p>
+                    <p>Formationminute est votre partenaire de confiance pour tous vos besoins en formation et services informatiques en Guinée.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Conakry, Guinée</p>
-                    <p><i class="fas fa-phone"></i> +224 612 33 44 11 / +224 625 31 58 87</p>
-                    <p><i class="fas fa-envelope"></i> contact@electrobusinessguinee.com</p>
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#maintenance">Maintenance Informatique</a></li>
+                        <li><a href="services.html#vente">Vente d'Équipements</a></li>
+                        <li><a href="services.html#voyage">Assistance Voyage</a></li>
+                        <li><a href="services.html#formation">Formation en informatique</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Formations</h3>
+                    <ul>
+                        <li><a href="formations.html#word">Microsoft Word</a></li>
+                        <li><a href="formations.html#excel">Microsoft Excel</a></li>
+                        <li><a href="formations.html#windows">Windows</a></li>
+                        <li><a href="formations.html#general">Informatique Générale</a></li>
+                        <li><a href="formations.html#maintenance">Maintenance</a></li>
+                        <li><a href="formations.html#infographie">Infographie</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Liens Rapides</h3>
                     <ul>
-                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="../index.html">Accueil</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="formations.html">Formations</a></li>
+                        <li><a href="apropos.html">À Propos</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Paris, Boulevard / ....</p>
+                    <p><i class="fas fa-phone"></i> 33 45 53 3224</p>
+                    <p><i class="fas fa-envelope"></i> formationminute@formationminute.net</p>
                 </div>
                 <div class="footer-section">
                     <h3>Suivez-nous</h3>
@@ -245,11 +175,11 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 ElectroBusinessGuinee. Tous droits réservés.</p>
+                <p>&copy; 2024 Formationminute. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html> 
