@@ -1732,23 +1732,24 @@ border-radius: 17px;
 
 .partenaires-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 10px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 5px;
+    margin-top: 30px;
 }
 
 .partenaire-card {
-    padding: 0px;
+    padding: 0;
     text-align: center;
     transition: transform 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
 }
 
 .partenaire-card:hover {
-    transform: translateY(-10px);
+    transform: scale(1.05);
 }
 
 .partenaire-card img {
-    max-width: 100px;
+    max-width: 80px;
     height: auto;
     filter: grayscale(100%);
     transition: all 0.3s ease;
@@ -1756,7 +1757,6 @@ border-radius: 17px;
 
 .partenaire-card:hover img {
     filter: grayscale(0%);
-    transform: scale(1.1);
 }
 
 .partenaire-card h3 {
@@ -2121,3 +2121,76 @@ border-radius: 17px;
         margin-top: 30px;
     }
 }
+
+/* Animations pour les sections */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation pour les sections */
+.about-us,
+.services,
+.formations,
+.testimonials,
+.partenaires,
+.smallAbout,
+.Certificat {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Animation pour les cartes de service */
+.service-card {
+    animation: fadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+.service-card:nth-child(7) { animation-delay: 0.7s; }
+.service-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* Animation pour les cartes de formation */
+.formation-card {
+    animation: fadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.formation-card:nth-child(1) { animation-delay: 0.1s; }
+.formation-card:nth-child(2) { animation-delay: 0.2s; }
+.formation-card:nth-child(3) { animation-delay: 0.3s; }
+.formation-card:nth-child(4) { animation-delay: 0.4s; }
+.formation-card:nth-child(5) { animation-delay: 0.5s; }
+.formation-card:nth-child(6) { animation-delay: 0.6s; }
+.formation-card:nth-child(7) { animation-delay: 0.7s; }
+.formation-card:nth-child(8) { animation-delay: 0.8s; }
+.formation-card:nth-child(9) { animation-delay: 0.9s; }
+
+/* Animation pour les témoignages */
+.testimonial-card {
+    animation: fadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.3s; }
