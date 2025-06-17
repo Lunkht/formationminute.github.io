@@ -660,6 +660,7 @@ h6 {
     border-radius: 1px;
     text-align: center;
     transition: transform 0.3s ease;
+    border: 0.4px solid #eee;
     position: relative;
     overflow: hidden;
     animation: fadeInUp 0.6s ease-out forwards;
@@ -678,7 +679,7 @@ h6 {
 }
 
 .formation-card h3 {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 5px;
     color: var(--color-violet2);
 }
