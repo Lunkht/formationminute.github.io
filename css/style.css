@@ -681,7 +681,8 @@ h6 {
 .formation-card h3 {
     font-size: 20px;
     margin-bottom: 5px;
-    color: var(--color-violet2);
+    color: var(--color-black);
+    font-weight: lighter;
 }
 
 .formation-card p {
