@@ -55,8 +55,12 @@ togglePasswordButtons.forEach(button => {
 registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const name = document.getElementById('registerName').value;
+    const prenom = document.getElementById('registerPrenom').value;
+    const nom = document.getElementById('registerNom').value;
     const email = document.getElementById('registerEmail').value;
+    const telephone = document.getElementById('registerTelephone').value;
+    const adresse = document.getElementById('registerAdresse').value;
+    const besoin = document.getElementById('registerBesoin').value;
     const password = document.getElementById('registerPassword').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
     
@@ -71,14 +75,32 @@ registerForm.addEventListener('submit', async (e) => {
         return;
     }
     
+    // Validation du numéro de téléphone
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(telephone)) {
+        showError(registerForm, 'Veuillez entrer un numéro de téléphone valide (10 chiffres)');
+        return;
+    }
+    
     try {
         // Création de l'utilisateur
         const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
         const user = userCredential.user;
         
-        // Mise à jour du profil
+        // Mise à jour du profil avec les informations supplémentaires
         await user.updateProfile({
-            displayName: name
+            displayName: `${prenom} ${nom}`
+        });
+        
+        // Stockage des informations supplémentaires dans Firestore
+        await firebase.firestore().collection('users').doc(user.uid).set({
+            prenom,
+            nom,
+            email,
+            telephone,
+            adresse,
+            besoin,
+            dateInscription: firebase.firestore.FieldValue.serverTimestamp()
         });
         
         showSuccess(registerForm, 'Inscription réussie !');

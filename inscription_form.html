@@ -96,13 +96,41 @@
                 <div class="auth-form" id="register-form">
                     <h2>Inscription</h2>
                     <form id="registerForm">
-                        <div class="form-group">
-                            <label for="registerName">Nom complet</label>
-                            <input type="text" id="registerName" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="registerPrenom">Prénom</label>
+                                <input type="text" id="registerPrenom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerNom">Nom</label>
+                                <input type="text" id="registerNom" required>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="registerEmail">Email</label>
                             <input type="email" id="registerEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerTelephone">Téléphone</label>
+                            <input type="tel" id="registerTelephone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerAdresse">Adresse</label>
+                            <textarea id="registerAdresse" rows="2" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerBesoin">Votre besoin</label>
+                            <select id="registerBesoin" required>
+                                <option value="">Sélectionnez votre besoin</option>
+                                <option value="formation">Formation</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="vente">Vente d'équipements</option>
+                                <option value="internet">Accès Internet</option>
+                                <option value="impression">Impression</option>
+                                <option value="cv">Traitement de CV</option>
+                                <option value="electromenager">Électroménager</option>
+                                <option value="autre">Autre</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="registerPassword">Mot de passe</label>
