@@ -1732,15 +1732,13 @@ border-radius: 17px;
 
 .partenaires-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
     margin-top: 40px;
 }
 
 .partenaire-card {
-    background-color: var(--color-white);
-    padding: 20px;
-    border-radius: 5px;
+    padding: 0px;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -1750,7 +1748,7 @@ border-radius: 17px;
 }
 
 .partenaire-card img {
-    max-width: 120px;
+    max-width: 100px;
     height: auto;
     filter: grayscale(100%);
     transition: all 0.3s ease;
@@ -1763,7 +1761,7 @@ border-radius: 17px;
 
 .partenaire-card h3 {
     font-size: 18px;
-    color: var(--color-gray);
+    color: var(--color-violet2);
     margin: 0;
     font-weight: 600;
 }
