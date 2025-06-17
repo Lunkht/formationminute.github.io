@@ -1000,37 +1000,57 @@ h6 {
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
-    color: #2c3e50;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.form-group input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid var(--color-gray-light);
+    padding: 12px;
+    border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
+    transition: border-color 0.3s ease;
 }
 
-.form-group textarea {
-    resize: vertical;
+.form-group input:focus {
+    border-color: var(--color-violet);
+    outline: none;
 }
 
 .submit-button {
-    background-color: var(--color-violet2);
-    color: var(--color-white);
-    padding: 12px 30px;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-violet);
+    color: #fff;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     font-size: 16px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .submit-button:hover {
-    background-color: var(--color-violet);
+    background-color: var(--color-dark-violet);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-footer p {
+    color: #666;
+}
+
+.form-footer a {
+    color: var(--color-violet);
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
 }
 
 .map-section {
@@ -1617,4 +1637,73 @@ h6 {
     .info-section p, .info-section ul li {
         font-size: 14px;
     }
+}
+
+/* Login and Registration Forms */
+.login-form,
+.registration-form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--color-violet);
+    outline: none;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-violet);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--color-dark-violet);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-footer p {
+    color: #666;
+}
+
+.form-footer a {
+    color: var(--color-violet);
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
 }
