@@ -1419,7 +1419,7 @@ h6 {
     }
 }
 
-/* Modal Styles */
+/* Styles pour les modales */
 .modal {
     display: none;
     position: fixed;
@@ -1434,57 +1434,43 @@ h6 {
 
 .modal-content {
     position: relative;
-    background-color: var(--color-white);
+    background-color: #fff;
     margin: 50px auto;
-    padding: 30px;
+    padding: 20px;
     width: 90%;
     max-width: 1000px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     animation: modalFadeIn 0.3s ease-out;
 }
 
-.close-modal {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 30px;
-    color: var(--color-gray);
-    cursor: pointer;
-    transition: color 0.3s ease;
-    z-index: 1001;
-}
-
-.close-modal:hover {
-    color: var(--color-red);
-}
-
 .modal-header {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--color-gray-light);
+    border-bottom: 2px solid var(--color-violet);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .modal-header h3 {
-    font-size: 28px;
-    color: var(--color-gray);
+    color: var(--color-violet);
+    font-size: 24px;
     margin: 0;
 }
 
 .modal-body {
     display: flex;
     gap: 30px;
+    margin-bottom: 20px;
 }
 
 .modal-image {
-    flex: 1;
+    flex: 0 0 40%;
 }
 
 .modal-image img {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .modal-info {
@@ -1492,73 +1478,96 @@ h6 {
 }
 
 .info-section {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .info-section h4 {
-    color: var(--color-red);
-    font-size: 20px;
-    margin-bottom: 15px;
+    color: var(--color-violet);
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
 }
 
 .info-section p {
-    color: var(--color-gray);
+    color: #666;
     line-height: 1.6;
+    margin: 0;
 }
 
 .info-section ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .info-section ul li {
-    color: var(--color-gray);
-    margin-bottom: 10px;
+    color: #666;
+    padding: 5px 0;
     padding-left: 20px;
     position: relative;
 }
 
 .info-section ul li:before {
     content: "•";
-    color: var(--color-red);
+    color: var(--color-violet);
     position: absolute;
     left: 0;
 }
 
 .modal-footer {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid var(--color-gray-light);
     text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
 }
 
-/* Styles pour les cartes avec modal */
-.service-card,
-.formation-card,
-.produit-card,
-.testimonial-card {
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #666;
     cursor: pointer;
-    position: relative;
+    transition: color 0.3s ease;
 }
 
-/* Animation du modal */
+.close-modal:hover {
+    color: var(--color-violet);
+}
+
 @keyframes modalFadeIn {
     from {
         opacity: 0;
         transform: translateY(-20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Responsive Design pour le modal */
+/* Styles spécifiques pour les formations */
+#formationModalPrice {
+    font-size: 24px;
+    color: var(--color-violet);
+    font-weight: bold;
+}
+
+#formationModalCertification {
+    color: #666;
+    font-style: italic;
+}
+
+#formationModalDuration {
+    color: #666;
+    font-weight: 500;
+}
+
+/* Responsive design pour les modales */
 @media (max-width: 768px) {
     .modal-content {
         margin: 20px auto;
-        padding: 20px;
         width: 95%;
     }
 
@@ -1566,813 +1575,16 @@ h6 {
         flex-direction: column;
     }
 
-    .modal-image img {
-        height: 200px;
+    .modal-image {
+        flex: 0 0 auto;
+        margin-bottom: 20px;
     }
 
-    .modal-info {
-        margin-top: 20px;
+    .info-section h4 {
+        font-size: 16px;
     }
 
-    .close-modal {
-        right: 15px;
-        top: 15px;
-        font-size: 24px;
+    .info-section p, .info-section ul li {
+        font-size: 14px;
     }
-}
-
-/* Vente Section */
-.vente {
-    padding: 80px 0;
-    background-color: var(--color-light-gray);
-}
-
-.vente h2 {
-    text-align: left;
-    margin-bottom: 50px;
-    color: var(--color-violet2);
-    font-size: 42px;
-    font-weight: 700;
-    position: relative;
-    padding-left: 20px;
-}
-
-.vente h2::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 40px;
-    background-color: var(--color-violet2);
-    border-radius: 4px;
-}
-
-.vente-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 10px;
-    margin-top: 40px;
-}
-
-.produit-card {
-    background-color: var(--color-white);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    position: relative;
-border-radius: 17px;
-}
-
-.produit-card:hover {
-    transform: translateY(-10px);
-}
-
-.produit-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: var(--color-violet2);
-    color: var(--color-white);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 600;
-    z-index: 1;
-}
-
-.produit-badge.promo {
-    background-color: var(--color-red-violet);
-}
-
-.produit-badge.stock {
-    background-color: var(--color-gray);
-}
-
-.produit-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.produit-card:hover img {
-    transform: scale(1.05);
-}
-
-.produit-info {
-    padding: 20px;
-}
-
-.produit-info h3 {
-    font-size: 15px;
-    color: var(--color-gray);
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.produit-description {
-    color: #666;
-    font-size: 12px;
-    margin-bottom: 15px;
-    line-height: 1.4;
-}
-
-.produit-prix {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.prix {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--color-red-violet);
-}
-
-.ancien-prix {
-    font-size: 12px;
-    color: #999;
-    margin-bottom: 10px;
-    text-decoration: line-through;
-}
-
-.acheter-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--color-red-violet);
-    color: var(--color-white);
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.acheter-btn:hover {
-    background-color: var(--color-violet);
-    transform: translateY(-2px);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .vente-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 5px;
-    }
-
-    .produit-card {
-        margin: 0 10px;
-    }
-
-    .produit-info {
-        padding: 15px;
-    }
-
-    .prix {
-        font-size: 20px;
-    }
-}
-
-/* Partenaires Section */
-.partenaires {
-    padding: 80px 0;
-    background-color: var(--color-light-gray);
-    animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.partenaires h2 {
-    text-align: left;
-    margin-bottom: 50px;
-    color: var(--color-violet2);
-    font-size: 42px;
-    font-weight: 700;
-    position: relative;
-    padding-left: 20px;
-}
-
-.partenaires h2::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 40px;
-    background-color: var(--color-violet2);
-    border-radius: 4px;
-}
-
-.partenaires-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-    gap: 2px;
-    margin-top: 20px;
-    justify-items: center;
-}
-
-.partenaire-card {
-    padding: 0;
-    text-align: center;
-    transition: transform 0.3s ease;
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.partenaire-card:hover {
-    transform: scale(1.05);
-}
-
-.partenaire-card img {
-    max-width: 60px;
-    height: auto;
-    filter: grayscale(100%);
-    transition: all 0.3s ease;
-}
-
-.partenaire-card:hover img {
-    filter: grayscale(0%);
-}
-
-.partenaire-card h3 {
-    font-size: 18px;
-    color: var(--color-violet2);
-    margin: 0;
-    font-weight: 600;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .partenaires-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 15px;
-    }
-
-    .partenaire-card {
-        padding: 15px;
-        min-height: 100px;
-    }
-
-    .partenaire-card img {
-        max-width: 80px;
-    }
-}
-
-/* Programme Section */
-.programme-section {
-    padding: 60px 0;
-    background-color: var(--color-light-gray);
-}
-
-.programme-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--color-blue);
-    position: relative;
-}
-
-.programme-section h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: var(--color-red);
-}
-
-.programme-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.programme-card {
-    background: var(--color-white);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.programme-card:hover {
-    transform: translateY(-5px);
-}
-
-.programme-card h3 {
-    color: var(--color-blue);
-    margin-bottom: 15px;
-    font-size: 1.2em;
-}
-
-.programme-card ul {
-    list-style: none;
-    padding: 0;
-}
-
-.programme-card ul li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.programme-card ul li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--color-red);
-}
-
-/* Formation Details Section */
-.formations-details {
-    padding: 60px 0;
-}
-
-.formation-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 40px;
-    padding: 30px;
-    background-color: var(--color-white);
-    border-radius: 1px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.formation-icon {
-    flex-shrink: 0;
-    width: 60px;
-    height: 60px;
-    background: var(--color-blue);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 20px;
-}
-
-.formation-icon i {
-    font-size: 24px;
-    color: var(--color-white);
-}
-
-.formation-content {
-    flex-grow: 1;
-}
-
-.formation-content h3 {
-    color: var(--color-blue);
-    margin-bottom: 15px;
-    font-size: 1.3em;
-}
-
-.formation-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.formation-content ul li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.formation-content ul li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--color-red);
-}
-
-@media (max-width: 768px) {
-    .formation-item {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .formation-icon {
-        margin: 0 auto 20px;
-    }
-
-    .programme-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Inscription Form Styles */
-.inscription-section {
-    padding: 60px 0;
-    background-color: #f8f9fa;
-}
-
-.inscription-form-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-.inscription-form .form-section {
-    margin-bottom: 40px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #eee;
-}
-
-.inscription-form .form-section:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.inscription-form h3 {
-    color: var(--primary-color);
-    margin-bottom: 25px;
-    font-size: 1.4rem;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.inscription-form h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background-color: var(--accent-color);
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #333;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: var(--primary-color);
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
-}
-
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.checkbox-group input[type="checkbox"] {
-    width: auto;
-}
-
-.checkbox-group label {
-    margin-bottom: 0;
-    font-size: 0.95rem;
-}
-
-.form-actions {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.submit-button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.submit-button:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-2px);
-}
-
-.submit-button i {
-    font-size: 1.2rem;
-}
-
-/* Responsive Styles for Inscription Form */
-@media (max-width: 768px) {
-    .inscription-form-container {
-        padding: 20px;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .inscription-form h3 {
-        font-size: 1.2rem;
-    }
-
-    .submit-button {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-
-/* About Us Section */
-.about-us {
-    padding: 60px;
-}
-
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text h2 {
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-.about-text p {
-    margin-bottom: 15px;
-    line-height: 1.6;
-    color: #666;
-}
-
-.about-image {
-    flex: 1;
-}
-
-.about-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 100%;
-}
-
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-    }
-    
-    .about-text, .about-image {
-        width: 100%;
-    }
-    
-    .about-image {
-        margin-top: 30px;
-    }
-}
-
-/* Animations pour les sections */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Animation pour les sections */
-.about-us,
-.services,
-.formations,
-.testimonials,
-.partenaires,
-.smallAbout,
-.Certificat {
-    animation: fadeInUp 1s ease-out;
-}
-
-/* Animation pour les cartes de service */
-.service-card {
-    animation: fadeInUp 0.5s ease-out;
-    animation-fill-mode: both;
-}
-
-.service-card:nth-child(1) { animation-delay: 0.1s; }
-.service-card:nth-child(2) { animation-delay: 0.2s; }
-.service-card:nth-child(3) { animation-delay: 0.3s; }
-.service-card:nth-child(4) { animation-delay: 0.4s; }
-.service-card:nth-child(5) { animation-delay: 0.5s; }
-.service-card:nth-child(6) { animation-delay: 0.6s; }
-.service-card:nth-child(7) { animation-delay: 0.7s; }
-.service-card:nth-child(8) { animation-delay: 0.8s; }
-
-/* Animation pour les cartes de formation */
-.formation-card {
-    animation: fadeInUp 0.5s ease-out;
-    animation-fill-mode: both;
-}
-
-.formation-card:nth-child(1) { animation-delay: 0.1s; }
-.formation-card:nth-child(2) { animation-delay: 0.2s; }
-.formation-card:nth-child(3) { animation-delay: 0.3s; }
-.formation-card:nth-child(4) { animation-delay: 0.4s; }
-.formation-card:nth-child(5) { animation-delay: 0.5s; }
-.formation-card:nth-child(6) { animation-delay: 0.6s; }
-.formation-card:nth-child(7) { animation-delay: 0.7s; }
-.formation-card:nth-child(8) { animation-delay: 0.8s; }
-.formation-card:nth-child(9) { animation-delay: 0.9s; }
-
-/* Animation pour les témoignages */
-.testimonial-card {
-    animation: fadeInUp 0.5s ease-out;
-    animation-fill-mode: both;
-}
-
-.testimonial-card:nth-child(1) { animation-delay: 0.1s; }
-.testimonial-card:nth-child(2) { animation-delay: 0.2s; }
-.testimonial-card:nth-child(3) { animation-delay: 0.3s; }
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Classes d'animation */
-.animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.animate-fade-in-down {
-    animation: fadeInDown 0.6s ease-out forwards;
-}
-
-.animate-fade-in-left {
-    animation: fadeInLeft 0.6s ease-out forwards;
-}
-
-.animate-fade-in-right {
-    animation: fadeInRight 0.6s ease-out forwards;
-}
-
-/* Animation des sections */
-.services,
-.formations,
-.testimonials,
-.newsletter,
-.partenaires {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
-}
-
-/* Animation des cartes */
-.service-card,
-.formation-card,
-.testimonial-card,
-.partenaire-card {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-/* Délai d'animation pour les cartes */
-.service-card:nth-child(2),
-.formation-card:nth-child(2),
-.testimonial-card:nth-child(2),
-.partenaire-card:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.service-card:nth-child(3),
-.formation-card:nth-child(3),
-.testimonial-card:nth-child(3),
-.partenaire-card:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-.service-card:nth-child(4),
-.formation-card:nth-child(4),
-.testimonial-card:nth-child(4),
-.partenaire-card:nth-child(4) {
-    animation-delay: 0.6s;
-}
-
-/* Animation du header */
-.main-header {
-    animation: fadeInDown 0.6s ease-out forwards;
-}
-
-/* Animation du hero */
-.hero {
-    animation: fadeInUp 0.8s ease-out forwards;
-}
-
-/* Animation du footer */
-.main-footer {
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-/* Animation des boutons */
-.cta-button,
-.auth-button,
-.submit-button {
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.cta-button:hover,
-.auth-button:hover,
-.submit-button:hover {
-    transform: translateY(-3px);
-}
-
-/* Animation des cartes au survol */
-.service-card,
-.formation-card,
-.testimonial-card,
-.partenaire-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover,
-.formation-card:hover,
-.testimonial-card:hover,
-.partenaire-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }

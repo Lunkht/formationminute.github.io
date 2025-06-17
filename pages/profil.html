@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Formation Minute</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/profil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="../images/favicon.jpg" type="image/x-icon">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i>contact@formationminute.net</span>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="signup-layout" style="display: flex;">
+                <li class="connexion-btn"><a href="./connexion.html">Se connecter</a></li>
+                <li class="inscription-btn"><a href="./inscription_form.html">S'inscrire</a></li>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.jpg" alt="Formation Minute Logo" class="logo-img">
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="boutique.html">Boutique</a></li>
+                    <li><a href="apropos.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-container">
+                <!-- Sidebar Navigation -->
+                <div class="profile-sidebar">
+                    <div class="user-info">
+                        <div class="profile-image">
+                            <img src="../images/default-avatar.png" alt="Photo de profil" id="profileImage">
+                            <div class="image-upload">
+                                <label for="imageInput">
+                                    <i class="fas fa-camera"></i>
+                                </label>
+                                <input type="file" id="imageInput" accept="image/*" hidden>
+                            </div>
+                        </div>
+                        <h3 id="userName">Nom de l'utilisateur</h3>
+                        <p id="userEmail">email@example.com</p>
+                    </div>
+                    <nav class="profile-nav">
+                        <ul>
+                            <li class="active" data-tab="informations">
+                                <i class="fas fa-user"></i>
+                                <span>Informations personnelles</span>
+                            </li>
+                            <li data-tab="formations">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Mes formations</span>
+                            </li>
+                            <li data-tab="certifications">
+                                <i class="fas fa-certificate"></i>
+                                <span>Certifications</span>
+                            </li>
+                            <li data-tab="parametres">
+                                <i class="fas fa-cog"></i>
+                                <span>Paramètres</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Main Content -->
+                <div class="profile-content">
+                    <!-- Informations Personnelles -->
+                    <div class="profile-tab active" id="informations">
+                        <h2>Informations personnelles</h2>
+                        <form id="profileForm" class="profile-form">
+                            <div class="form-group">
+                                <label for="firstName">Prénom</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nom</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Adresse</label>
+                                <textarea id="address" name="address" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="needs">Besoins spécifiques</label>
+                                <textarea id="needs" name="needs" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="save-button">
+                                <i class="fas fa-save"></i>
+                                Enregistrer les modifications
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Mes Formations -->
+                    <div class="profile-tab" id="formations">
+                        <h2>Mes formations</h2>
+                        <div class="formations-list">
+                            <!-- Les formations seront ajoutées dynamiquement ici -->
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="profile-tab" id="certifications">
+                        <h2>Mes certifications</h2>
+                        <div class="certifications-list">
+                            <!-- Les certifications seront ajoutées dynamiquement ici -->
+                        </div>
+                    </div>
+
+                    <!-- Paramètres -->
+                    <div class="profile-tab" id="parametres">
+                        <h2>Paramètres du compte</h2>
+                        <form id="settingsForm" class="settings-form">
+                            <div class="form-group">
+                                <label for="currentPassword">Mot de passe actuel</label>
+                                <input type="password" id="currentPassword" name="currentPassword">
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">Nouveau mot de passe</label>
+                                <input type="password" id="newPassword" name="newPassword">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirmer le mot de passe</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword">
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    Recevoir la newsletter
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="notifications" name="notifications">
+                                    Activer les notifications
+                                </label>
+                            </div>
+                            <button type="submit" class="save-button">
+                                <i class="fas fa-save"></i>
+                                Enregistrer les paramètres
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>À Propos</h3>
+                    <p>Formationminute est votre partenaire de confiance pour tous vos besoins en formation et services informatiques en Guinée.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#maintenance">Maintenance Informatique</a></li>
+                        <li><a href="services.html#vente">Vente d'Équipements</a></li>
+                        <li><a href="services.html#voyage">Assistance Voyage</a></li>
+                        <li><a href="services.html#formation">Formation en informatique</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Formations</h3>
+                    <ul>
+                        <li><a href="formations.html#word">Microsoft Word</a></li>
+                        <li><a href="formations.html#excel">Microsoft Excel</a></li>
+                        <li><a href="formations.html#windows">Windows</a></li>
+                        <li><a href="formations.html#general">Informatique Générale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="formations.html">Formations</a></li>
+                        <li><a href="apropos.html">À Propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Paris, Boulevard / ....</p>
+                    <p><i class="fas fa-phone"></i> 33 45 53 3224</p>
+                    <p><i class="fas fa-envelope"></i> formationminute@formationminute.net</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Formationminute. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/profil.js"></script>
+</body>
+</html> 
