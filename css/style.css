@@ -1732,9 +1732,10 @@ border-radius: 17px;
 
 .partenaires-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 5px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 2px;
+    margin-top: 20px;
+    justify-items: center;
 }
 
 .partenaire-card {
@@ -1749,7 +1750,7 @@ border-radius: 17px;
 }
 
 .partenaire-card img {
-    max-width: 80px;
+    max-width: 60px;
     height: auto;
     filter: grayscale(100%);
     transition: all 0.3s ease;
