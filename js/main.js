@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
+                if (!entry.target.classList.contains('formation-card')) {
+                    entry.target.classList.add('animate');
+                }
             }
         });
     }, observerOptions);
