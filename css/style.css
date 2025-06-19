@@ -1829,3 +1829,26 @@ h6 {
         margin: 5px;
     }
 }
+
+.details-btn {
+  background: linear-gradient(90deg, #a00 0%, #d32f2f 100%);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 32px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(160,0,0,0.08);
+  margin-top: 8px;
+  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.details-btn:hover {
+  background: linear-gradient(90deg, #c00 0%, #e53935 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(160,0,0,0.16);
+}
