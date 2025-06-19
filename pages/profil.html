@@ -70,6 +70,9 @@
                         </div>
                         <h3 id="userName">Nom de l'utilisateur</h3>
                         <p id="userEmail">email@example.com</p>
+                        <button class="logout-btn" onclick="import('../js/auth.js').then(m => m.logout())">
+                            <i class="fas fa-sign-out-alt"></i> Déconnexion
+                        </button>
                     </div>
                     <nav class="profile-nav">
                         <ul>
@@ -244,7 +247,6 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/profil.js"></script>
-    <button class="logout-btn" onclick="import('./js/auth.js').then(m => m.logout())">Déconnexion</button>
 
 </body>
 </html> 
