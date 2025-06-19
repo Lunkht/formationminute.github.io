@@ -383,4 +383,19 @@
     background: linear-gradient(90deg, #c00 0%, #e53935 100%);
     box-shadow: 0 6px 24px rgba(160,0,0,0.18);
     transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 600px) {
+    .logout-btn {
+        width: 100%;
+        min-width: 0;
+        padding: 14px 0;
+        font-size: 1em;
+        border-radius: 18px;
+        justify-content: center;
+        margin-top: 18px;
+    }
+    .logout-btn i {
+        font-size: 1.1em;
+    }
 } 
