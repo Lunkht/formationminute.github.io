@@ -137,9 +137,7 @@ registerForm.addEventListener('submit', async (e) => {
         showSuccess(registerForm, 'Inscription réussie ! Vérifiez votre email pour activer votre compte.');
         
         // Redirection après succès
-        setTimeout(() => {
-            window.location.href = 'connexion.html';
-        }, 3000);
+        window.location.href = 'connexion.html';
         
     } catch (error) {
         handleAuthError(error, registerForm); // Passe le formulaire pour afficher l'erreur au bon endroit
