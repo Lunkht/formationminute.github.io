@@ -20,12 +20,15 @@ import {
     GoogleAuthProvider, 
     FacebookAuthProvider, 
     onAuthStateChanged,
-    updateProfile // Importé pour mettre à jour le profil après création
+    updateProfile,
+    sendEmailVerification,
+    signOut
 } from 'firebase/auth';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app); // Obtient l'instance Auth
-
+const db = getFirestore(app);
 
 // Éléments DOM
 const authTabs = document.querySelectorAll('.auth-tab');
@@ -68,6 +71,15 @@ togglePasswordButtons.forEach(button => {
     });
 });
 
+// Redirection automatique si déjà connecté (sur page de connexion/inscription)
+if (window.location.pathname.includes('connexion') || window.location.pathname.includes('inscription')) {
+    onAuthStateChanged(auth, (user) => {
+        if (user && user.emailVerified) {
+            window.location.href = 'index.html';
+        }
+    });
+}
+
 // Gestion de l'inscription
 registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -107,13 +119,27 @@ registerForm.addEventListener('submit', async (e) => {
             displayName: `${prenom} ${nom}`
         });
         
+        // Stockage des infos personnalisées dans Firestore
+        await setDoc(doc(db, "users", user.uid), {
+            prenom,
+            nom,
+            email,
+            telephone,
+            adresse,
+            besoin,
+            createdAt: new Date()
+        });
+        
+        // Envoi de l'email de vérification
+        await sendEmailVerification(user);
+        
         console.log('Inscription réussie pour:', user.email);
-        showSuccess(registerForm, 'Inscription réussie !');
+        showSuccess(registerForm, 'Inscription réussie ! Vérifiez votre email pour activer votre compte.');
         
         // Redirection après succès
         setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 2000); // Redirige après 2 secondes
+            window.location.href = 'connexion.html';
+        }, 3000);
         
     } catch (error) {
         handleAuthError(error, registerForm); // Passe le formulaire pour afficher l'erreur au bon endroit
@@ -128,12 +154,14 @@ loginForm.addEventListener('submit', async (e) => {
     const password = document.getElementById('loginPassword').value;
     
     try {
-        await signInWithEmailAndPassword(auth, email, password);
-        
-        console.log('Connexion réussie pour:', auth.currentUser.email);
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        if (!user.emailVerified) {
+            await signOut(auth);
+            showError(loginForm, 'Votre email n\'est pas vérifié. Veuillez vérifier votre boîte mail.');
+            return;
+        }
         showSuccess(loginForm, 'Connexion réussie !');
-        
-        // Redirection après succès
         setTimeout(() => {
             window.location.href = 'index.html';
         }, 2000); // Redirige après 2 secondes
@@ -320,9 +348,9 @@ function showSuccess(form, message) {
     }, 5000);
 }
 
-// Vérification de l'état de l'authentification
-// Cela permet de savoir si l'utilisateur est déjà connecté au chargement de la page
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        // L'utilisateur est connecté
-        console.log('Utilisateur connecté:', user.email, '(UID:', user
+// Fonction de déconnexion exportée
+export function logout() {
+    signOut(auth).then(() => {
+        window.location.href = 'connexion.html';
+    });
+}

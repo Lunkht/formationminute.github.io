@@ -357,4 +357,19 @@
     .form-row .form-group {
         margin-bottom: 20px;
     }
+}
+
+.logout-btn {
+    background: #a00;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.2s;
+}
+.logout-btn:hover {
+    background: #c00;
 } 
