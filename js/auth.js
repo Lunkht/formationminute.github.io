@@ -81,152 +81,162 @@ if (window.location.pathname.includes('connexion') || window.location.pathname.i
 }
 
 // Gestion de l'inscription
-registerForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    console.log('Formulaire soumis');
-    
-    const prenom = document.getElementById('registerPrenom').value;
-    const nom = document.getElementById('registerNom').value;
-    const email = document.getElementById('registerEmail').value;
-    const telephone = document.getElementById('registerTelephone').value;
-    const adresse = document.getElementById('registerAdresse').value;
-    const besoin = document.getElementById('registerBesoin').value;
-    const password = document.getElementById('registerPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    
-    // Validation du mot de passe
-    if (password !== confirmPassword) {
-        showError(registerForm, 'Les mots de passe ne correspondent pas');
-        return;
-    }
-    
-    if (password.length < 6) {
-        showError(registerForm, 'Le mot de passe doit contenir au moins 6 caractères');
-        return;
-    }
-    
-    try {
-        console.log('Tentative de création du compte...');
-        // Création de l'utilisateur
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
+if (registerForm) {
+    registerForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        console.log('Formulaire soumis');
         
-        console.log('Compte créé, mise à jour du profil...');
-        // Mise à jour du profil
-        await updateProfile(user, {
-            displayName: `${prenom} ${nom}`
-        });
+        const prenom = document.getElementById('registerPrenom').value;
+        const nom = document.getElementById('registerNom').value;
+        const email = document.getElementById('registerEmail').value;
+        const telephone = document.getElementById('registerTelephone').value;
+        const adresse = document.getElementById('registerAdresse').value;
+        const besoin = document.getElementById('registerBesoin').value;
+        const password = document.getElementById('registerPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
         
-        console.log('Profil mis à jour, stockage des infos dans Firestore...');
-        // Stockage dans Firestore
-        await setDoc(doc(db, "users", user.uid), {
-            prenom,
-            nom,
-            email,
-            telephone,
-            adresse,
-            besoin,
-            createdAt: new Date()
-        });
-        
-        console.log('Envoi de l\'email de vérification...');
-        // Email de vérification
-        await sendEmailVerification(user);
-        
-        console.log('Inscription réussie, redirection...');
-        showSuccess(registerForm, 'Inscription réussie ! Vérifiez votre email.');
-        
-        // Redirection immédiate
-        window.location.replace('./connexion.html');
-        
-    } catch (error) {
-        console.error('Erreur lors de l\'inscription:', error);
-        handleAuthError(error, registerForm);
-    }
-});
-
-// Gestion de la connexion
-loginForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-    
-    try {
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
-        if (!user.emailVerified) {
-            await signOut(auth);
-            showError(loginForm, 'Votre email n\'est pas vérifié. Veuillez vérifier votre boîte mail.');
+        // Validation du mot de passe
+        if (password !== confirmPassword) {
+            showError(registerForm, 'Les mots de passe ne correspondent pas');
             return;
         }
-        showSuccess(loginForm, 'Connexion réussie !');
-        setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 2000); // Redirige après 2 secondes
         
-    } catch (error) {
-        handleAuthError(error, loginForm); // Passe le formulaire pour afficher l'erreur au bon endroit
-    }
-});
+        if (password.length < 6) {
+            showError(registerForm, 'Le mot de passe doit contenir au moins 6 caractères');
+            return;
+        }
+        
+        try {
+            console.log('Tentative de création du compte...');
+            // Création de l'utilisateur
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            
+            console.log('Compte créé, mise à jour du profil...');
+            // Mise à jour du profil
+            await updateProfile(user, {
+                displayName: `${prenom} ${nom}`
+            });
+            
+            console.log('Profil mis à jour, stockage des infos dans Firestore...');
+            // Stockage dans Firestore
+            await setDoc(doc(db, "users", user.uid), {
+                prenom,
+                nom,
+                email,
+                telephone,
+                adresse,
+                besoin,
+                createdAt: new Date()
+            });
+            
+            console.log('Envoi de l\'email de vérification...');
+            // Email de vérification
+            await sendEmailVerification(user);
+            
+            console.log('Inscription réussie, redirection...');
+            showSuccess(registerForm, 'Inscription réussie ! Un email de vérification a été envoyé.');
+            
+            // Redirection après un court délai pour laisser le temps de lire le message
+            setTimeout(() => {
+                window.location.href = 'connexion.html';
+            }, 3000); // 3 secondes
+            
+        } catch (error) {
+            console.error('Erreur lors de l\'inscription:', error);
+            handleAuthError(error, registerForm);
+        }
+    });
+}
+
+// Gestion de la connexion
+if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+        
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            if (!user.emailVerified) {
+                await signOut(auth);
+                showError(loginForm, 'Votre email n\'est pas vérifié. Veuillez vérifier votre boîte mail.');
+                return;
+            }
+            showSuccess(loginForm, 'Connexion réussie !');
+            setTimeout(() => {
+                window.location.href = '../index.html'; // Corrigé pour remonter d'un niveau
+            }, 2000); // Redirige après 2 secondes
+            
+        } catch (error) {
+            handleAuthError(error, loginForm); // Passe le formulaire pour afficher l'erreur au bon endroit
+        }
+    });
+}
 
 // Connexion avec Google
-googleBtn.addEventListener('click', async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-        // Assurez-vous que la méthode Google est activée dans la console Firebase > Authentication > Sign-in method
-        await signInWithPopup(auth, provider);
-        console.log('Connexion réussie avec Google');
-        window.location.href = 'index.html';
-    } catch (error) {
-        // Gérer spécifiquement les erreurs de popup si nécessaire
-        if (error.code === 'auth/popup-closed-by-user') {
-             console.log('Popup Google fermée par l\'utilisateur');
-             // Vous pouvez choisir de ne rien faire ou d'afficher un message moins intrusif
-        } else if (error.code === 'auth/cancelled-popup-request') {
-             console.log('Requête de popup Google annulée (plusieurs popups déclenchées trop vite)');
-        } else if (error.code === 'auth/popup-blocked') {
-             console.log('Popup Google bloquée par le navigateur');
-             showError(document.querySelector('.auth-form.active'), 'La popup de connexion Google a été bloquée. Veuillez autoriser les popups pour ce site.');
+if (googleBtn) {
+    googleBtn.addEventListener('click', async () => {
+        const provider = new GoogleAuthProvider();
+        try {
+            // Assurez-vous que la méthode Google est activée dans la console Firebase > Authentication > Sign-in method
+            await signInWithPopup(auth, provider);
+            console.log('Connexion réussie avec Google');
+            window.location.href = '../index.html'; // Corrigé pour remonter d'un niveau
+        } catch (error) {
+            // Gérer spécifiquement les erreurs de popup si nécessaire
+            if (error.code === 'auth/popup-closed-by-user') {
+                 console.log('Popup Google fermée par l\'utilisateur');
+                 // Vous pouvez choisir de ne rien faire ou d'afficher un message moins intrusif
+            } else if (error.code === 'auth/cancelled-popup-request') {
+                 console.log('Requête de popup Google annulée (plusieurs popups déclenchées trop vite)');
+            } else if (error.code === 'auth/popup-blocked') {
+                 console.log('Popup Google bloquée par le navigateur');
+                 showError(document.querySelector('.auth-form.active'), 'La popup de connexion Google a été bloquée. Veuillez autoriser les popups pour ce site.');
+            }
+            else {
+                handleAuthError(error, document.querySelector('.auth-form.active')); // Gère les autres erreurs
+            }
         }
-        else {
-            handleAuthError(error, document.querySelector('.auth-form.active')); // Gère les autres erreurs
-        }
-    }
-});
+    });
+}
 
 // Connexion avec Facebook
-facebookBtn.addEventListener('click', async () => {
-    const provider = new FacebookAuthProvider();
-     // Vous pouvez ajouter des scopes supplémentaires si nécessaire, comme dans l'exemple de la documentation:
-     // provider.addScope('email');
-     // provider.addScope('user_friends');
-    try {
-        // Assurez-vous que la méthode Facebook est activée dans la console Firebase > Authentication > Sign-in method
-        await signInWithPopup(auth, provider);
-        console.log('Connexion réussie avec Facebook');
-        window.location.href = 'index.html';
-    } catch (error) {
-         // Gérer spécifiquement les erreurs de popup Facebook
-         if (error.code === 'auth/popup-closed-by-user') {
-             console.log('Popup Facebook fermée par l\'utilisateur');
-         } else if (error.code === 'auth/cancelled-popup-request') {
-              console.log('Requête de popup Facebook annulée');
-         } else if (error.code === 'auth/popup-blocked') {
-             console.log('Popup Facebook bloquée par le navigateur');
-             showError(document.querySelector('.auth-form.active'), 'La popup de connexion Facebook a été bloquée. Veuillez autoriser les popups pour ce site.');
-         } else if (error.code === 'auth/account-exists-with-different-credential') {
-            console.log('Compte existant avec une autre méthode:', error.email);
-            // Ceci est un cas d'erreur courant lorsque l'email est déjà utilisé mais avec une autre méthode (ex: email/password)
-            // Vous pouvez gérer ce cas en demandant à l'utilisateur de se connecter avec la méthode existante et de lier les comptes.
-            // La documentation Firebase Auth (que je ne peux pas lier ici) a des exemples détaillés pour gérer ce scénario 'auth/account-exists-with-different-credential'.
-            showError(document.querySelector('.auth-form.active'), `Un compte existe déjà avec cet email (${error.email}). Veuillez vous connecter avec la méthode d'origine.`);
-         }
-        else {
-             handleAuthError(error, document.querySelector('.auth-form.active')); // Gère les autres erreurs
-         }
-    }
-});
+if (facebookBtn) {
+    facebookBtn.addEventListener('click', async () => {
+        const provider = new FacebookAuthProvider();
+         // Vous pouvez ajouter des scopes supplémentaires si nécessaire, comme dans l'exemple de la documentation:
+         // provider.addScope('email');
+         // provider.addScope('user_friends');
+        try {
+            // Assurez-vous que la méthode Facebook est activée dans la console Firebase > Authentication > Sign-in method
+            await signInWithPopup(auth, provider);
+            console.log('Connexion réussie avec Facebook');
+            window.location.href = '../index.html'; // Corrigé pour remonter d'un niveau
+        } catch (error) {
+             // Gérer spécifiquement les erreurs de popup Facebook
+             if (error.code === 'auth/popup-closed-by-user') {
+                 console.log('Popup Facebook fermée par l\'utilisateur');
+             } else if (error.code === 'auth/cancelled-popup-request') {
+                  console.log('Requête de popup Facebook annulée');
+             } else if (error.code === 'auth/popup-blocked') {
+                 console.log('Popup Facebook bloquée par le navigateur');
+                 showError(document.querySelector('.auth-form.active'), 'La popup de connexion Facebook a été bloquée. Veuillez autoriser les popups pour ce site.');
+             } else if (error.code === 'auth/account-exists-with-different-credential') {
+                console.log('Compte existant avec une autre méthode:', error.email);
+                // Ceci est un cas d'erreur courant lorsque l'email est déjà utilisé mais avec une autre méthode (ex: email/password)
+                // Vous pouvez gérer ce cas en demandant à l'utilisateur de se connecter avec la méthode existante et de lier les comptes.
+                // La documentation Firebase Auth (que je ne peux pas lier ici) a des exemples détaillés pour gérer ce scénario 'auth/account-exists-with-different-credential'.
+                showError(document.querySelector('.auth-form.active'), `Un compte existe déjà avec cet email (${error.email}). Veuillez vous connecter avec la méthode d'origine.`);
+             }
+            else {
+                 handleAuthError(error, document.querySelector('.auth-form.active')); // Gère les autres erreurs
+             }
+        }
+    });
+}
 
 // Gestion des erreurs d'authentification (prend maintenant le formulaire en paramètre)
 function handleAuthError(error, form) {
