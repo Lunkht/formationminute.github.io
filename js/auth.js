@@ -83,13 +83,14 @@ if (window.location.pathname.includes('connexion') || window.location.pathname.i
 // Gestion de l'inscription
 registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+    console.log('Formulaire soumis');
     
     const prenom = document.getElementById('registerPrenom').value;
     const nom = document.getElementById('registerNom').value;
     const email = document.getElementById('registerEmail').value;
-    const telephone = document.getElementById('registerTelephone').value; // Note: Le numéro de téléphone n'est pas stocké par défaut avec email/password
-    const adresse = document.getElementById('registerAdresse').value; // Note: L'adresse n'est pas stockée par défaut avec email/password
-    const besoin = document.getElementById('registerBesoin').value; // Note: Ce champ n'est pas stocké par défaut avec email/password
+    const telephone = document.getElementById('registerTelephone').value;
+    const adresse = document.getElementById('registerAdresse').value;
+    const besoin = document.getElementById('registerBesoin').value;
     const password = document.getElementById('registerPassword').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
     
@@ -99,27 +100,25 @@ registerForm.addEventListener('submit', async (e) => {
         return;
     }
     
-    // Firebase Authentication a une validation de mot de passe minimale par défaut de 6 caractères.
-    // Cette validation côté client est une bonne pratique mais n'est pas strictement nécessaire pour le fonctionnement de createUserWithEmailAndPassword.
     if (password.length < 6) {
-         showError(registerForm, 'Le mot de passe doit contenir au moins 6 caractères');
-         return;
-     }
+        showError(registerForm, 'Le mot de passe doit contenir au moins 6 caractères');
+        return;
+    }
     
     try {
-        // Création de l'utilisateur avec email et mot de passe
+        console.log('Tentative de création du compte...');
+        // Création de l'utilisateur
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
         
-        // Mise à jour du profil pour ajouter le nom et prénom
-        // Notez que les champs téléphone, adresse, besoin ne font pas partie du profil utilisateur par défaut de Firebase Auth.
-        // Si vous souhaitez les stocker, vous devriez les enregistrer dans une base de données (comme Cloud Firestore ou Realtime Database)
-        // en utilisant l'UID de l'utilisateur comme clé, après l'inscription réussie.
+        console.log('Compte créé, mise à jour du profil...');
+        // Mise à jour du profil
         await updateProfile(user, {
             displayName: `${prenom} ${nom}`
         });
         
-        // Stockage des infos personnalisées dans Firestore
+        console.log('Profil mis à jour, stockage des infos dans Firestore...');
+        // Stockage dans Firestore
         await setDoc(doc(db, "users", user.uid), {
             prenom,
             nom,
@@ -130,17 +129,19 @@ registerForm.addEventListener('submit', async (e) => {
             createdAt: new Date()
         });
         
-        // Envoi de l'email de vérification
+        console.log('Envoi de l\'email de vérification...');
+        // Email de vérification
         await sendEmailVerification(user);
         
-        console.log('Inscription réussie pour:', user.email);
-        showSuccess(registerForm, 'Inscription réussie ! Vérifiez votre email pour activer votre compte.');
+        console.log('Inscription réussie, redirection...');
+        showSuccess(registerForm, 'Inscription réussie ! Vérifiez votre email.');
         
-        // Redirection après succès
-        window.location.href = 'connexion.html';
+        // Redirection immédiate
+        window.location.replace('./connexion.html');
         
     } catch (error) {
-        handleAuthError(error, registerForm); // Passe le formulaire pour afficher l'erreur au bon endroit
+        console.error('Erreur lors de l\'inscription:', error);
+        handleAuthError(error, registerForm);
     }
 });
 
