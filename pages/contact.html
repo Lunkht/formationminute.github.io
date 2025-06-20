@@ -6,8 +6,8 @@
     <title>Contact - Electro Business Guinée</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/animations.css">
 </head>
 <body>
     <!-- Top Navigation -->
@@ -31,7 +31,7 @@
     <header class="main-header">
         <div class="container">
             <div class="logo">
-                <img src="../images/logo.jpg" alt="ElectroBusinessGuinee Logo" class="logo-img">
+                <img src="../images/logo.png" alt="ElectroBusinessGuinee Logo" class="logo-img">
             </div>
             <button class="menu-toggle" aria-label="Menu">
                 <i class="fas fa-bars"></i>
@@ -50,7 +50,7 @@
     </header>
 
     <!-- Contact Content Section -->
-    <section class="contact-content">
+    <section class="contact-content fade-in-section">
         <div class="container">
             <div class="contact-grid">
                 <!-- Contact Information -->
@@ -124,7 +124,7 @@
     </section>
 
     <!-- Map Section -->
-    <section class="map-section">
+    <section class="map-section fade-in-section">
         <div class="container">
             <h3>Notre Localisation</h3>
             <div class="map-container">
@@ -194,7 +194,8 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
     <script>
         // Gestion du formulaire de contact
         document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -220,4 +221,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
