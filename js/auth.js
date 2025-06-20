@@ -39,6 +39,13 @@ const togglePasswordButtons = document.querySelectorAll('.toggle-password');
 const googleBtn = document.querySelector('.google-btn');
 const facebookBtn = document.querySelector('.facebook-btn');
 
+// Debug: Vérifier si les éléments sont trouvés
+console.log('Éléments DOM trouvés:');
+console.log('registerForm:', registerForm);
+console.log('loginForm:', loginForm);
+console.log('googleBtn:', googleBtn);
+console.log('facebookBtn:', facebookBtn);
+
 // Gestion des onglets
 authTabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -82,6 +89,7 @@ if (window.location.pathname.includes('connexion') || window.location.pathname.i
 
 // Gestion de l'inscription
 if (registerForm) {
+    console.log('registerForm trouvé, ajout de l\'event listener');
     registerForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         console.log('Formulaire soumis');
@@ -94,6 +102,8 @@ if (registerForm) {
         const besoin = document.getElementById('registerBesoin').value;
         const password = document.getElementById('registerPassword').value;
         const confirmPassword = document.getElementById('confirmPassword').value;
+        
+        console.log('Données du formulaire récupérées:', { prenom, nom, email, telephone, adresse, besoin });
         
         // Validation du mot de passe
         if (password !== confirmPassword) {
@@ -139,6 +149,7 @@ if (registerForm) {
             
             // Redirection après un court délai pour laisser le temps de lire le message
             setTimeout(() => {
+                console.log('Redirection vers connexion.html...');
                 window.location.href = 'connexion.html';
             }, 3000); // 3 secondes
             
@@ -147,6 +158,8 @@ if (registerForm) {
             handleAuthError(error, registerForm);
         }
     });
+} else {
+    console.error('registerForm non trouvé !');
 }
 
 // Gestion de la connexion
