@@ -109,10 +109,10 @@
     <div class="container">
         <div class="Certificat-content">
         
-            <div class="Certificat-image">
+            <div class="Certificat-image" id="certification">
                 <img src="images/Logo-OF.png" alt="Formation et développement personnel">
             </div>
-            <div class="Certificat-image">
+            <div class="Certificat-image"  id="digital-agent">
                 <img src="images/vvf1.JPG" alt="Formation et développement personnel">
             </div>
         </div>
@@ -444,5 +444,23 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var digitalAgent = document.getElementById('digital-agent');
+        if (digitalAgent) {
+          digitalAgent.style.cursor = 'pointer';
+          digitalAgent.addEventListener('click', function() {
+            window.location.href = 'pages/digital_reconditioning_agent.html';
+          });
+        }
+        var certification = document.getElementById('certification');
+        if (certification) {
+          certification.style.cursor = 'pointer';
+          certification.addEventListener('click', function() {
+            window.open('docs/CCF_000395.pdf', '_blank');
+          });
+        }
+      });
+    </script>
 </body>
 </html>

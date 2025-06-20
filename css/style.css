@@ -1883,3 +1883,148 @@ h6 {
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 4px 16px rgba(160,0,0,0.16);
 }
+
+/* Style spécifique à la page agent-de-reconditionnement */
+.agent-de-reconditionnement h1,
+.agent-de-reconditionnement h2,
+.agent-de-reconditionnement h3 {
+  color: #7c3aed;
+  font-family: 'Poppins', 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5em;
+}
+.agent-de-reconditionnement h1 {
+  font-size: 2.6em;
+  margin-top: 0.5em;
+}
+.agent-de-reconditionnement h2 {
+  font-size: 2em;
+}
+.agent-de-reconditionnement h3 {
+  font-size: 1.3em;
+}
+
+@media (max-width: 700px) {
+  .agent-de-reconditionnement h1 {
+    font-size: 2em;
+  }
+  .agent-de-reconditionnement h2 {
+    font-size: 1.3em;
+  }
+  .agent-de-reconditionnement h3 {
+    font-size: 1.1em;
+  }
+}
+
+/* Footer spécifique à la page agent-de-reconditionnement */
+.agent-de-reconditionnement .main-footer h3 {
+  color: #7c3aed;
+  font-size: 1.25em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.agent-de-reconditionnement .main-footer a {
+  color: #7c3aed;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.agent-de-reconditionnement .main-footer a:hover {
+  color: #5b21b6;
+  text-decoration: underline;
+}
+
+/* Style spécifique à la page digital_reconditioning_agent */
+.digital-reconditioning-agent h1,
+.digital-reconditioning-agent h2,
+.digital-reconditioning-agent h3 {
+  color: var(--color-violet);
+  font-family: 'Poppins', 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5em;
+}
+.digital-reconditioning-agent h1 {
+  font-size: 2.6em;
+  margin-top: 0.5em;
+}
+.digital-reconditioning-agent h2 {
+  font-size: 2em;
+}
+.digital-reconditioning-agent h3 {
+  font-size: 1.3em;
+}
+.digital-reconditioning-agent .cta-button,
+.digital-reconditioning-agent button {
+  background: linear-gradient(90deg, var(--color-violet) 0%, var(--color-red-violet) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 36px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 24px;
+  box-shadow: 0 4px 16px rgba(111,1,50,0.10);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  letter-spacing: 1px;
+}
+.digital-reconditioning-agent .cta-button:hover,
+.digital-reconditioning-agent button:hover {
+  background: linear-gradient(90deg, var(--color-red-violet) 0%, var(--color-violet) 100%);
+  box-shadow: 0 6px 24px rgba(149,2,73,0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+.digital-reconditioning-agent i,
+.digital-reconditioning-agent .icon {
+  color: var(--color-red-violet);
+}
+@media (max-width: 700px) {
+  .digital-reconditioning-agent h1 {
+    font-size: 2em;
+  }
+  .digital-reconditioning-agent h2 {
+    font-size: 1.3em;
+  }
+  .digital-reconditioning-agent h3 {
+    font-size: 1.1em;
+  }
+  .digital-reconditioning-agent .cta-button,
+  .digital-reconditioning-agent button {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 1em;
+    border-radius: 18px;
+    justify-content: center;
+    margin-top: 18px;
+  }
+}
+
+/* Footer et top-nav par défaut pour digital-reconditioning-agent */
+.digital-reconditioning-agent .main-footer {
+  background: #fff;
+}
+.digital-reconditioning-agent .main-footer h3,
+.digital-reconditioning-agent .main-footer a {
+  color: #222;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.digital-reconditioning-agent .main-footer a:hover {
+  color: #6f0132;
+}
+.digital-reconditioning-agent .main-footer .social-links a i {
+  color: #222;
+}
+.digital-reconditioning-agent .top-nav {
+  background: #fff;
+}
+.digital-reconditioning-agent .top-nav .social-links a i,
+.digital-reconditioning-agent .top-nav .contact-info i,
+.digital-reconditioning-agent .top-nav .signup-layout a {
+  color: #222;
+}
