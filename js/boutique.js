@@ -2,10 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const productModal = document.getElementById('product-modal');
     const closeModalBtn = document.querySelector('.modal .close-btn');
     const modalProductDetails = document.getElementById('modal-product-details');
-    const productCards = document.querySelectorAll('.produit-card');
+    const detailButtons = document.querySelectorAll('.detail-btn');
 
-    productCards.forEach(card => {
-        card.addEventListener('click', () => {
+    detailButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const card = e.target.closest('.produit-card');
             const productImage = card.querySelector('img').src;
             const productTitle = card.querySelector('h3').innerText;
             const productDescription = card.querySelector('.produit-description').innerText;
