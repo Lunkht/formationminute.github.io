@@ -2028,3 +2028,69 @@ h6 {
 .digital-reconditioning-agent .top-nav .signup-layout a {
   color: #222;
 }
+
+/* Section équipe (teams) */
+.teams {
+  background: #faf9f6;
+  padding: 60px 0 40px 0;
+}
+.teams h2 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 32px;
+  color: #6f0132;
+}
+.teams-grid {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.team-member {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(111,1,50,0.08);
+  padding: 32px 24px 24px 24px;
+  max-width: 320px;
+  text-align: center;
+  flex: 1 1 260px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.team-member:hover {
+  box-shadow: 0 8px 32px rgba(149,2,73,0.16);
+  transform: translateY(-4px) scale(1.03);
+}
+.team-photo {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  border: 3px solid #7c3aed;
+}
+.team-member h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.25em;
+  color: #6f0132;
+}
+.team-member .role {
+  color: #7c3aed;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+.team-member p {
+  color: #444;
+  font-size: 1em;
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+  .teams-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .team-member {
+    max-width: 90vw;
+  }
+}
