@@ -588,7 +588,7 @@ h6 {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
     gap: 10px;
 }
 
@@ -1794,7 +1794,7 @@ h6 {
 /* Partenaires Section */
 .partenaires {
     padding: 60px 0;
-    background-color: #f9f9f9;
+    background-color: #fff;
 }
 
 .partenaires h2 {
