@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Animation des cartes au scroll
-    const cards = document.querySelectorAll('.service-card, .formation-card');
+    const cards = document.querySelectorAll('.service-card');
     
     const observerOptions = {
         threshold: 0.1
@@ -34,9 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                if (!entry.target.classList.contains('formation-card')) {
-                    entry.target.classList.add('animate');
-                }
+                entry.target.classList.add('animate');
             }
         });
     }, observerOptions);
